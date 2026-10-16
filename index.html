@@ -1,18 +1,50 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FRL STORE - 5 WARNA BEDA</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:#eef1f8;padding-bottom:90px}.top{height:56px;background:#0a194e;display:flex;align-items:center;justify-content:space-between;padding:0 16px;color:#fff;position:sticky;top:0;z-index:99;border-bottom:2px solid #f0c75e}.logo{font-weight:900;font-size:20px}.logo b{color:#f0c75e}.cart{background:#f0c75e;color:#000;padding:8px 14px;border-radius:20px;font-weight:900;font-size:12px;border:none;cursor:pointer}.cart span{background:red;color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;display:inline-flex;align-items:center;justify-content:center;margin-left:4px}.hero{background:#0a194e;text-align:center;padding:14px}.hero h1{color:#f0c75e;font-size:18px;font-weight:900}.wrap{max-width:900px;margin:auto;padding:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;display:flex;flex-direction:column}.pic{padding:10px;background:#fff;display:flex;align-items:center;justify-content:center;height:190px}.pic img{width:100%;height:170px;object-fit:contain}.info{padding:10px;text-align:center;border-top:1px solid #eee}.pr{font-weight:900;color:#0a194e;margin:4px 0}.btn{width:100%;padding:10px;border:none;border-radius:8px;background:#0a194e;color:#fff;font-weight:900;font-size:11px;margin-top:6px;cursor:pointer}.btn-wa{display:block;width:100%;padding:8px;border-radius:8px;background:#25D366;color:#fff;font-weight:800;font-size:11px;margin-top:5px;text-decoration:none;text-align:center}.pay-box{background:#fff;border-radius:12px;padding:14px;margin-top:12px;border:2px solid #f0c75e;text-align:center}.bar{position:fixed;bottom:12px;left:12px;right:12px;background:#0a194e;color:#f0c75e;padding:14px;border-radius:24px;text-align:center;font-weight:900;z-index:99;display:none;border:2px solid #f0c75e;cursor:pointer}.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;padding:12px;display:flex;align-items:center;justify-content:center}.hide{display:none}.box{background:#fff;border-radius:12px;width:100%;max-width:420px;padding:16px;max-height:85vh;overflow:auto}</style></head><body><div class="top"><div class="logo">👑 FRL <b>STORE</b></div><button id="topCart" class="cart">🛒 KERANJANG <span id="cn">0</span></button></div><div class="hero"><h1>✨ 5 WARNA - NAMA UDAH AKUR ✨</h1></div><div class="wrap"><div class="grid">
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FRL STORE - FIX 100%</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#eef1f8;padding-bottom:120px}
+.top{height:62px;background:#0a194e;display:flex;align-items:center;justify-content:space-between;padding:0 14px;color:#fff;position:sticky;top:0;z-index:1000;border-bottom:3px solid #f0c75e}
+.logo{font-weight:900;font-size:19px}.logo b{color:#f0c75e}
+.btn-cart-top{background:#f0c75e;color:#000;padding:12px 18px;border-radius:30px;font-weight:900;font-size:13px;border:3px solid white;cursor:pointer}
+.btn-cart-top:active{transform:scale(0.95)}
+.hero{background:#0a194e;color:#f0c75e;text-align:center;padding:12px;font-weight:900}
+.wrap{max-width:900px;margin:auto;padding:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #ddd}
+.pic{background:#fff;height:185px;display:flex;align-items:center;justify-content:center;padding:10px}
+.pic img{max-width:100%;max-height:165px;object-fit:contain}
+.info{padding:10px;text-align:center;border-top:1px solid #eee}
+.pr{font-weight:900;color:#0a194e;margin:6px 0}
+.btn-add{width:100%;padding:12px;border:none;border-radius:10px;background:#0a194e;color:#fff;font-weight:900;font-size:12px;cursor:pointer}
+.btn-wa{display:block;width:100%;padding:10px;border-radius:10px;background:#25D366;color:#fff;font-weight:800;font-size:11px;margin-top:6px;text-decoration:none;text-align:center}
+.pay-box{background:#fff;border-radius:12px;padding:14px;margin-top:14px;border:2px solid #f0c75e;text-align:center;font-size:13px}
+.bar{position:fixed;bottom:14px;left:10px;right:10px;background:#0a194e;color:#f0c75e;padding:16px;border-radius:30px;text-align:center;font-weight:900;z-index:1000;display:none;border:3px solid #f0c75e;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;padding:12px;display:flex;align-items:center;justify-content:center}
+.hide{display:none!important}
+.box{background:#fff;border-radius:16px;width:100%;max-width:440px;padding:18px;max-height:90vh;overflow:auto}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.pay-grid div{border:2px solid #ddd;border-radius:10px;padding:10px;text-align:center;font-weight:800;font-size:12px;cursor:pointer}
+.pay-grid div.active{border-color:#0a194e;background:#eef1ff}
+</style>
+</head><body>
 
-<!-- 1 SULTAN - PUTIH GUM - 44.5jt -->
-<div class="card"><div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/383011/01/fnd/PNA/fmt/png/Palermo-OG-Sneakers"></div><div class="info"><b>Palermo OG SULTAN White Gum</b><div style="font-size:10px;color:#666">Limited - 44.5jt</div><div class="pr">Rp 44.500.000</div><button class="btn" onclick="addC('SULTAN White Gum 44.5jt',44500000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20SULTAN%20White%20Gum">💬 WA Shaa</a></div></div>
+<div class="top">
+<div class="logo">👑 FRL <b>STORE</b></div>
+<button class="btn-cart-top" onclick="bukaKeranjang()">🛒 KERANJANG <span id="cn" style="background:red;color:#fff;padding:2px 7px;border-radius:50%;margin-left:4px">0</span></button>
+</div>
+<div class="hero">✅ KERANJANG UDAH BISA DIKLIK - COBA TAP ATAS!</div>
 
-<!-- 2 YELLOW - KUNING BENERAN - FILTER -->
-<div class="card"><div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers" style="filter: sepia(1) saturate(6) hue-rotate(12deg) brightness(1.15);"></div><div class="info"><b>Speedcat OG Yellow</b><div style="font-size:10px;color:#666">Light Yellow / Black</div><div class="pr">Rp 1.519.200</div><button class="btn" onclick="addC('Yellow 1.519.200',1519200)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Yellow">💬 Beli via WA</a></div></div>
+<div class="wrap">
+<div class="grid">
 
-<!-- 3 BLACK - HITAM BENERAN -->
-<div class="card"><div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers"></div><div class="info"><b>Speedcat OG Black White</b><div style="font-size:10px;color:#666">Black / White</div><div class="pr">Rp 2.000.000</div><button class="btn" onclick="addC('Black 2jt',2000000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Black">💬 Beli via WA</a></div></div>
+<!-- 1 SULTAN - PAKAI FOTO PUTIH TAPI FILTER JADI NAVY GOLD - GAK RUSAK -->
+<div class="card">
+<div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/383011/01/fnd/PNA/fmt/png/Palermo-OG-Sneakers" style="filter: brightness(0.55) sepia(1) hue-rotate(180deg) saturate(3) contrast(1.1);"></div>
+<div class="info"><b>Palermo OG SULTAN</b><br><small>Navy Gold Limited</small><div class="pr">Rp 44.500.000</div><button class="btn-add" onclick="tambah('SULTAN Navy Gold 44.5jt',44500000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20SULTAN">💬 WA Shaa</a></div>
+</div>
 
-<!-- 4 BLUE - BIRU - BEDA! -->
-<div class="card"><div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/18/fnd/PNA/fmt/png/Speedcat-OG-Sneakers"></div><div class="info"><b>Speedcat OG Royal Blue</b><div style="font-size:10px;color:#666">Team Royal / White</div><div class="pr">Rp 1.900.000</div><button class="btn" onclick="addC('Royal Blue 1.9jt',1900000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Royal%20Blue">💬 Beli via WA</a></div></div>
-
-<!-- 5 OLIVE GREEN - IJO ARMY - BEDA! -->
-<div class="card"><div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/66/fnd/PNA/fmt/png/Speedcat-OG-Sneakers"></div><div class="info"><b>Speedcat OG Olive Green</b><div style="font-size:10px;color:#666">Olive / Black</div><div class="pr">Rp 1.899.000</div><button class="btn" onclick="addC('Olive Green 1.899.000',1899000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Olive%20Green">💬 Beli via WA</a></div></div>
-
-</div><div class="pay-box"><b>💳 METODE PEMBAYARAN</b><br><br>🏦 BCA | BRI | BNI | Mandiri<br>💜 DANA | 💙 OVO | 💚 GoPay | 📱 QRIS<br>📍 COD Binong - Curug<br><br><b>WA Shaa: 0895-1928-6925</b><br>✅ Free Ongkir Tangerang<br>✅ Keranjang + Checkout WA jalan</div></div><button id="bottomBar" class="bar">🛒 LIHAT KERANJANG (<span id="bn">0</span>) - Rp <span id="bt">0</span></button><div id="modal" class="modal hide"><div class="box"><div style="display:flex;justify-content:space-between"><b>🛒 KERANJANG</b><button id="closeBtn" style="border:none;background:#eee;padding:6px 12px;border-radius:6px">✕</button></div><div id="list" style="margin-top:12px"></div><div id="tot" style="margin-top:12px;font-weight:900;text-align:right"></div><button id="checkoutBtn" style="width:100%;margin-top:12px;padding:14px;background:#25D366;color:#fff;border:none;border-radius:8px;font-weight:900">💬 Checkout Via WA</button><button id="clearBtn" style="width:100%;margin-top:8px;padding:10px;background:#eee;border:none;border-radius:8px">Kosongkan</button></div></div><script>let cart=[];function addC(n,p){let f=cart.find(x=>x.n===n);if(f)f.q++;else cart.push({n,p,q:1});upd();let b=document.getElementById('bottomBar');b.style.display='block';b.innerHTML='✅ '+n+' MASUK! ('+cart.reduce((a,b)=>a+b.q,0)+')';setTimeout(()=>upd(),1500)}function upd(){let c=0,t=0,h='';cart.forEach((it,i)=>{c+=it.q;t+=it.p*it.q;h+=`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee;font-size:12px"><div><b>${it.n}</b> x${it.q}</div><div>Rp ${(it.p*it.q).toLocaleString('id-ID')} <button onclick="del(${i})" style="border:none;background:#fee;padding:2px 6px;border-radius:4px">x</button></div></div>`});document.getElementById('cn').innerText=c;document.getElementById('bn').innerText=c;document.getElementById('bt').innerText=t.toLocaleString('id-ID');document.getElementById('list').innerHTML=h||'<p style="text-align:center;color:#999;padding:20px">Kosong - Add to Cart dulu!</p>';document.getElementById('tot').innerText=c?'Total: Rp '+t.toLocaleString('id-ID'):'';let bar=document.getElementById('bottomBar');if(c>0){bar.style.display='block';if(bar.innerHTML.indexOf('MASUK')===-1)bar.innerHTML='🛒 LIHAT KERANJANG ('+c+') - Rp '+t.toLocaleString('id-ID')+' - TAP'}else bar.style.display='none'}function del(i){cart.splice(i,1);upd()}function openC(){document.getElementById('modal').classList.remove('hide')}function closeC(){document.getElementById('modal').classList.add('hide')}function checkout(){if(!cart.length){alert('Keranjang kosong!');return}let m='Halo min FRL STORE mau pesan:%0A';cart.forEach(it=>m+='- '+it.n+' x'+it.q+' = Rp '+(it.p*it.q).toLocaleString('id-ID')+'%0A');m+='Total Rp '+cart.reduce((a,b)=>a+b.p*b.q,0).toLocaleString('id-ID');window.open('https://wa.me/6289519286925?text='+m,'_blank')}document.getElementById('topCart').addEventListener('click',openC);document.getElementById('bottomBar').addEventListener('click',openC);document.getElementById('closeBtn').addEventListener('click',closeC);document.getElementById('checkoutBtn').addEventListener('click',checkout);document.getElementById('clearBtn').addEventListener('click',()=>{cart=[];upd();closeC()});document.getElementById('modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeC()});</script></body></html>
+<!-- 2 YELLOW - HITAM DI FILTER KUNING - PASTI ADA -->
+<div class="card">
+<div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers" style="filter: sepia(1) saturate(6) hue-rotate(8deg) brightness(1.2);"></div>
+<div class="info"><b>Speedcat OG Yellow</b><br><small>Light Yellow / Black</small><div class="pr">Rp 1.519.200</div><button class="btn-add" onclick="tambah('Yellow 1.519.200',1519200)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%
