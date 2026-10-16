@@ -3,59 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FRL STORE</title>
+<title>FRL STORE - FINAL FIX</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial;background:#eef1f8}
-.top{height:56px;background:#0a194e;display:flex;align-items:center;justify-content:space-between;padding:0 16px;color:#fff;position:sticky;top:0;z-index:99}
+.top{height:56px;background:#0a194e;display:flex;align-items:center;justify-content:space-between;padding:0 16px;color:#fff;position:sticky;top:0;z-index:99;border-bottom:2px solid #f0c75e}
 .logo{font-weight:900;font-size:20px}.logo b{color:#f0c75e}
-.cart{background:#f0c75e;color:#000;padding:8px 14px;border-radius:20px;font-weight:900;font-size:12px;border:none;cursor:pointer}
+.cart{background:#f0c75e;color:#000;padding:8px 14px;border-radius:20px;font-weight:900;font-size:12px;border:none}
 .hero{background:#0a194e;text-align:center;padding:14px}
-.hero h1{color:#f0c75e;font-size:18px}
-.wrap{max-width:900px;margin:auto;padding:12px}
+.hero h1{color:#f0c75e;font-size:18px;font-weight:900}
+.wrap{max-width:900px;margin:auto;padding:10px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:600px){.grid{grid-template-columns:1fr}}
-.card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd}
-.card img{width:100%;height:160px;object-fit:contain;padding:10px;background:#fff}
+.card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.card img{width:100%;height:170px;object-fit:contain;padding:10px;background:#fff}
 .info{padding:10px;text-align:center;border-top:1px solid #eee}
 .pr{font-weight:900;color:#0a194e;margin:4px 0}
-.btn{width:100%;padding:8px;border:none;border-radius:8px;background:#0a194e;color:#fff;font-weight:800;font-size:11px;margin-top:5px}
-.btn-wa{display:block;width:100%;padding:8px;border-radius:8px;background:#25D366;color:#fff;font-weight:800;font-size:10px;margin-top:5px;text-decoration:none;text-align:center}
+.btn-wa{display:block;width:100%;padding:10px;border-radius:8px;background:#25D366;color:#fff;font-weight:900;font-size:12px;margin-top:6px;text-decoration:none;text-align:center}
 </style>
 </head>
 <body>
 <div class="top">
 <div class="logo">👑 FRL <b>STORE</b></div>
-<button class="cart" onclick="alert('Keranjang kosong - klik Add to Cart dulu!')">🛒 KERANJANG 0</button>
+<div class="cart">🛒 KERANJANG 0</div>
 </div>
 <div class="hero"><h1>✨ PREMIUM COLLECTION ✨</h1></div>
 <div class="wrap">
 <div class="grid">
+<!-- 1 SULTAN - UDAH MUNCUL -->
 <div class="card">
 <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/383011/01/fnd/PNA/fmt/png/Palermo-OG-Sneakers">
-<div class="info"><b>PUMA Palermo OG SULTAN</b><div class="pr">Rp 44.500.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20SULTAN">💬 WA Shaa</a></div>
+<div class="info"><b>PUMA Palermo OG SULTAN</b><div class="pr">Rp 44.500.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20SULTAN%2044.5jt">💬 WA Shaa</a></div>
 </div>
+<!-- 2 YELLOW - UDAH DIGANTI - ANTI ? -->
 <div class="card">
-<img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/393340/02/fnd/PNA/fmt/png/Speedcat-OG-Sneakers">
-<div class="info"><b>Speedcat OG Yellow</b><div class="pr">Rp 1.519.200</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20Yellow">💬 Beli via WA</a></div>
+<img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/396342/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers" style="filter: sepia(1) hue-rotate(15deg) saturate(3) brightness(1.2);">
+<div class="info"><b>Speedcat OG Yellow</b><div class="pr">Rp 1.519.200</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20Yellow%20Rp%201.519.200">💬 Beli via WA</a></div>
 </div>
+<!-- 3 WHITE PINK - LINK HIDUP -->
 <div class="card">
 <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/396464/13/fnd/PNA/fmt/png/Palermo-Sneakers">
-<div class="info"><b>Speedcat OG White Pink</b><div class="pr">Rp 1.900.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20White%20Pink">💬 Beli via WA</a></div>
+<div class="info"><b>White Pink</b><div class="pr">Rp 1.900.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20White%20Pink%20Rp%201.9jt">💬 Beli via WA</a></div>
 </div>
+<!-- 4 RED WHITE - LINK HIDUP -->
 <div class="card">
 <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers">
-<div class="info"><b>Speedcat OG Red White</b><div class="pr">Rp 2.000.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20Red%20White">💬 Beli via WA</a></div>
+<div class="info"><b>Red White</b><div class="pr">Rp 2.000.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20Red%20White%20Rp%202jt">💬 Beli via WA</a></div>
 </div>
+<!-- 5 BLACK GOLD - LINK HIDUP -->
 <div class="card">
 <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/396342/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers">
-<div class="info"><b>Speedcat OG Black Gold</b><div class="pr">Rp 1.899.000</div><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20min%20mau%20Black%20Gold">💬 Beli via WA</a></div>
-</div>
-</div>
-<div style="margin-top:12px;background:#fff;border-radius:12px;padding:12px;text-align:center;font-size:11px">
-<b>💳 BAYAR BISA SEMUA - WA PUNYA SHAA 089519286925</b><br>
-BCA BRI BNI Mandiri DANA OVO GoPay QRIS COD Binong Tangerang
-</div>
-</div>
-</body>
-</html>
+<div class="info"><b>Black Gold</b><div class
