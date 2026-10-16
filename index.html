@@ -47,4 +47,134 @@ body{font-family:Arial;background:#eef1f8;padding-bottom:120px}
 <!-- 2 YELLOW - HITAM DI FILTER KUNING - PASTI ADA -->
 <div class="card">
 <div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers" style="filter: sepia(1) saturate(6) hue-rotate(8deg) brightness(1.2);"></div>
-<div class="info"><b>Speedcat OG Yellow</b><br><small>Light Yellow / Black</small><div class="pr">Rp 1.519.200</div><button class="btn-add" onclick="tambah('Yellow 1.519.200',1519200)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%
+<div class="info"><b>Speedcat OG Yellow</b><br><small>Light Yellow / Black</small><div class="pr">Rp 1.519.200</div><button class="btn-add" onclick="tambah('Yellow 1.519.200',1519200)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Yellow">💬 Beli via WA</a></div>
+</div>
+
+<!-- 3 WHITE GUM - FOTO ASLI PUTIH GUM - PASTI ADA -->
+<div class="card">
+<div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/383011/01/fnd/PNA/fmt/png/Palermo-OG-Sneakers"></div>
+<div class="info"><b>Palermo OG White Gum</b><br><small>White / Gum</small><div class="pr">Rp 1.900.000</div><button class="btn-add" onclick="tambah('White Gum 1.9jt',1900000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20White%20Gum">💬 Beli via WA</a></div>
+</div>
+
+<!-- 4 BLACK - FOTO ASLI HITAM - PASTI ADA -->
+<div class="card">
+<div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/01/fnd/PNA/fmt/png/Speedcat-OG-Sneakers"></div>
+<div class="info"><b>Speedcat OG Black White</b><br><small>Black / White BEST SELLER</small><div class="pr">Rp 2.000.000</div><button class="btn-add" onclick="tambah('Black White 2jt',2000000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Black">💬 Beli via WA</a></div>
+</div>
+
+<!-- 5 OLIVE - FOTO ASLI OLIVE - PASTI ADA -->
+<div class="card">
+<div class="pic"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_400/global/398846/66/fnd/PNA/fmt/png/Speedcat-OG-Sneakers"></div>
+<div class="info"><b>Speedcat OG Olive Green</b><br><small>Olive / Black</small><div class="pr">Rp 1.899.000</div><button class="btn-add" onclick="tambah('Olive Green 1.899jt',1899000)">Add to Cart</button><a class="btn-wa" href="https://wa.me/6289519286925?text=Halo%20mau%20Olive">💬 Beli via WA</a></div>
+</div>
+
+</div>
+
+<div class="pay-box">
+<b>💳 METODE PEMBAYARAN - BISA SEMUA!</b><br><br>
+🏦 BCA | BRI | BNI | Mandiri<br>
+💜 DANA | 💙 OVO | 💚 GoPay | 📱 QRIS<br>
+📍 COD Binong - Curug - Tangerang<br><br>
+<b>WA Shaa: 0895-1928-6925</b><br>
+✅ Tap KERANJANG di atas untuk lihat metode bayar!
+</div>
+</div>
+
+<button id="bottomBar" class="bar" onclick="bukaKeranjang()">🛒 TAP DISINI UNTUK BAYAR - (<span id="bn">0</span>) - Rp <span id="bt">0</span></button>
+
+<div id="modal" class="modal hide">
+<div class="box">
+<div style="display:flex;justify-content:space-between"><b>🛒 KERANJANG - BISA DIKLIK!</b><button onclick="tutupKeranjang()" style="padding:8px 14px;border-radius:8px;border:none;background:#eee;font-weight:900">✕ TUTUP</button></div>
+
+<div id="list" style="margin-top:14px"></div>
+<div id="tot" style="margin-top:12px;font-weight:900"></div>
+
+<div style="margin-top:16px;background:#f0f2ff;padding:12px;border-radius:12px;border:2px solid #0a194e">
+<b>💳 PILIH METODE BAYAR - SEMUA BISA!</b>
+<div class="pay-grid" style="margin-top:10px">
+<div id="pay-BCA" class="active" onclick="pilihBayar('BCA')">🏦 BCA</div>
+<div id="pay-BRI" onclick="pilihBayar('BRI')">🏦 BRI</div>
+<div id="pay-BNI" onclick="pilihBayar('BNI')">🏦 BNI</div>
+<div id="pay-Mandiri" onclick="pilihBayar('Mandiri')">🏦 Mandiri</div>
+<div id="pay-DANA" onclick="pilihBayar('DANA')">💜 DANA</div>
+<div id="pay-OVO" onclick="pilihBayar('OVO')">💙 OVO</div>
+<div id="pay-GoPay" onclick="pilihBayar('GoPay')">💚 GoPay</div>
+<div id="pay-QRIS" onclick="pilihBayar('QRIS')">📱 QRIS</div>
+</div>
+<div id="pay-COD" onclick="pilihBayar('COD Binong')" style="margin-top:6px;border:2px solid #25D366;border-radius:10px;padding:12px;text-align:center;font-weight:900;background:#e8ffe8;cursor:pointer">📍 COD Binong - Curug - Tangerang</div>
+<div style="margin-top:10px;background:#fff;padding:8px;border-radius:8px;font-size:12px">Dipilih: <b id="payName">BCA</b> - Info rekening dikirim via WA</div>
+</div>
+
+<button onclick="checkoutWA()" style="width:100%;margin-top:14px;padding:16px;background:#25D366;color:#fff;border:none;border-radius:12px;font-weight:900;font-size:15px">💬 Checkout Via WA Shaa - BISA SEMUA METODE</button>
+<button onclick="kosongkan()" style="width:100%;margin-top:8px;padding:12px;background:#eee;border:none;border-radius:10px">🗑️ Kosongkan Keranjang</button>
+</div>
+</div>
+
+<script>
+var cart = [];
+var bayar = 'BCA';
+function pilihBayar(n){
+ bayar = n;
+ document.getElementById('payName').innerText = n;
+ var els = document.querySelectorAll('.pay-grid div');
+ els.forEach(function(e){e.classList.remove('active')});
+ var el = document.getElementById('pay-'+n);
+ if(el) el.classList.add('active');
+ if(n.indexOf('COD')>-1){
+   document.getElementById('payName').innerText = 'COD Binong';
+ }
+}
+function tambah(nama,harga){
+ var ada = null;
+ for(var i=0;i<cart.length;i++){if(cart[i].n==nama){ada=cart[i];break;}}
+ if(ada){ada.q++}else{cart.push({n:nama,p:harga,q:1})}
+ update();
+ var bar = document.getElementById('bottomBar');
+ bar.style.display='block';
+ bar.innerHTML = '✅ '+nama+' MASUK! TAP DISINI ('+totalQty()+')';
+ setTimeout(function(){update()},1200);
+}
+function totalQty(){var s=0;for(var i=0;i<cart.length;i++)s+=cart[i].q;return s;}
+function totalRp(){var s=0;for(var i=0;i<cart.length;i++)s+=cart[i].p*cart[i].q;return s;}
+function update(){
+ var qty = totalQty();
+ var rp = totalRp();
+ document.getElementById('cn').innerText = qty;
+ document.getElementById('bn').innerText = qty;
+ document.getElementById('bt').innerText = rp.toLocaleString('id-ID');
+ var html = '';
+ for(var i=0;i<cart.length;i++){
+  var it = cart[i];
+  html += '<div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee"><div><b>'+it.n+'</b><br><small>x'+it.q+'</small></div><div style="text-align:right">Rp '+(it.p*it.q).toLocaleString('id-ID')+'<br><button onclick="hapus('+i+')" style="margin-top:4px;padding:4px 8px;border:none;background:#ffdddd;border-radius:6px">❌ Hapus</button></div></div>';
+ }
+ if(!html) html = '<p style="text-align:center;color:#999;padding:30px">Keranjang kosong<br>Klik Add to Cart dulu min!</p>';
+ document.getElementById('list').innerHTML = html;
+ if(qty>0){
+  document.getElementById('tot').innerHTML = '<div style="background:#0a194e;color:#f0c75e;padding:12px;border-radius:10px">Total: Rp '+rp.toLocaleString('id-ID')+' ('+qty+' barang) - Bayar pakai '+bayar+'</div>';
+  document.getElementById('bottomBar').style.display='block';
+  if(document.getElementById('bottomBar').innerHTML.indexOf('MASUK')==-1){
+   document.getElementById('bottomBar').innerHTML = '🛒 LIHAT KERANJANG ('+qty+') - Rp '+rp.toLocaleString('id-ID')+' - TAP BAYAR ('+bayar+')';
+  }
+ } else {
+  document.getElementById('tot').innerHTML = '';
+  document.getElementById('bottomBar').style.display='none';
+ }
+}
+function hapus(i){cart.splice(i,1);update();}
+function bukaKeranjang(){document.getElementById('modal').classList.remove('hide');}
+function tutupKeranjang(){document.getElementById('modal').classList.add('hide');}
+function kosongkan(){cart=[];update();tutupKeranjang();}
+function checkoutWA(){
+ if(cart.length==0){alert('Keranjang kosong min! Klik Add to Cart dulu!');return;}
+ var pesan = 'Halo min FRL STORE! Mau pesan:%0A%0A';
+ for(var i=0;i<cart.length;i++){pesan += '- '+cart[i].n+' x'+cart[i].q+' = Rp '+(cart[i].p*cart[i].q).toLocaleString('id-ID')+'%0A';}
+ pesan += '%0ATotal: Rp '+totalRp().toLocaleString('id-ID')+'%0A';
+ pesan += 'Metode Bayar: '+bayar+'%0A%0A';
+ pesan += 'Minta info '+bayar+' ya min!%0AAlamat COD: Binong / Curug / Tangerang';
+ window.open('https://wa.me/6289519286925?text='+pesan,'_blank');
+}
+// biar bisa diklik dimanapun
+window.bukaKeranjang = bukaKeranjang;
+window.tutupKeranjang = tutupKeranjang;
+</script>
+</body></html>
