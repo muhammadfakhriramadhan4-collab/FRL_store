@@ -1,20 +1,161 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FRL TOP UP - PILIH GAME</title><style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',Arial;background:#070a1c;color:#fff;padding-bottom:110px}.top{height:62px;background:#0f1330;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:100;border-bottom:1px solid #1e2350}.step-bar{display:flex;gap:6px;padding:10px 16px;background:#0f1330;position:sticky;top:62px;z-index:99;overflow:auto}.step{flex:1;display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:#5a5e8a;white-space:nowrap}.step b{width:20px;height:20px;border-radius:50%;background:#1e2350;display:flex;align-items:center;justify-content:center;font-size:11px}.step.active{color:#f0c75e}.step.active b{background:#f0c75e;color:#000}.step.done{color:#25D366}.step.done b{background:#25D366;color:#fff}.game-select{padding:14px 16px;background:#070a1c}.game-select h3{font-size:12px;color:#8a8db0;margin-bottom:10px}.game-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}.game-card{background:#10143a;border:2px solid #1e2350;border-radius:16px;padding:12px 6px;text-align:center;cursor:pointer;transition:.2s}.game-card.active{border-color:#f0c75e;background:linear-gradient(180deg,#1c2040,#10143a);box-shadow:0 0 15px rgba(240,199,94,.25)}.game-card .ico{font-size:28px}.game-card .nm{font-size:10px;font-weight:700;margin-top:4px;line-height:1.2}.card-section{margin:12px 16px;background:#10143a;border:1px solid #1e2350;border-radius:20px;padding:16px}.card-section h3{font-size:13px;display:flex;align-items:center;gap:8px;margin-bottom:12px}.card-section h3 b{background:#f0c75e;color:#000;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}.input-group{display:flex;gap:8px}.input{flex:1;padding:14px;border-radius:12px;border:1.5px solid #2a2f6a;background:#0b0e26;color:#fff;outline:none;font-size:13px}.input:focus{border-color:#f0c75e}.btn-check{padding:14px 18px;border-radius:12px;border:none;background:#f0c75e;color:#000;font-weight:800;font-size:12px}.nick{margin-top:10px;background:#0b0e26;border-radius:12px;padding:10px 12px;font-size:12px;display:none;border:1px solid #25D366}.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.item{background:#0b0e26;border:1.5px solid #1e2350;border-radius:14px;padding:10px;text-align:center;cursor:pointer;transition:.2s;position:relative}.item.active{border-color:#f0c75e;background:linear-gradient(180deg,#1c2040,#10143a);box-shadow:0 0 15px rgba(240,199,94,.2)}.item.active:after{content:'✓';position:absolute;top:6px;right:6px;width:18px;height:18px;background:#f0c75e;color:#000;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pay-item{background:#0b0e26;border:1.5px solid #1e2350;border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;cursor:pointer}.pay-item.active{border-color:#f0c75e;background:#1c2040}.summary{background:#fff;color:#000;border-radius:18px;padding:14px;margin-top:12px}.btn-buy{width:100%;padding:16px;border:none;border-radius:100px;background:linear-gradient(135deg,#f0c75e,#ffd88a);color:#000;font-weight:800;font-size:14px;margin-top:14px;cursor:pointer}.btn-buy:disabled{background:#333;color:#777}.hide{display:none!important}.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px}.sheet{background:#fff;color:#000;border-radius:24px;width:100%;max-width:420px;padding:20px;text-align:center}.loader{width:50px;height:50px;border:4px solid #eee;border-top:4px solid #f0c75e;border-radius:50%;animation:spin 1s linear infinite;margin:16px auto}@keyframes spin{to{transform:rotate(360deg)}}canvas#conf{position:fixed;inset:0;pointer-events:none;z-index:5000}</style></head><body>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FRL TOP UP - FIX PENCET</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:#f5f6f8;color:#111;padding-bottom:20px}.top{height:60px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.06)}.logo{font-weight:900}.logo span{color:#ff6b00}.banner{margin:12px;background:linear-gradient(135deg,#101c3d,#1e3a8a);border-radius:14px;padding:16px;color:#fff;display:flex;justify-content:space-between}.pill-wrap{display:flex;gap:8px;overflow:auto;padding:12px}.pill{padding:10px 16px;border-radius:100px;background:#fff;border:2px solid #e5e7eb;font-weight:800;font-size:12px;white-space:nowrap;flex-shrink:0}.pill.active{background:#111;color:#fff;border-color:#111}.box{margin:12px;background:#fff;border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}.box h3{font-size:14px;font-weight:900;margin-bottom:10px}.row{display:flex;gap:8px}.inp{flex:1;padding:13px;border-radius:10px;border:2px solid #e5e7eb;outline:none;font-size:13px}.inp:focus{border-color:#ff6b00}.btn{padding:13px 18px;border-radius:10px;border:none;background:#111;color:#fff;font-weight:800}.grid{margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.denom{border:2px solid #e5e7eb;border-radius:12px;padding:12px;display:flex;justify-content:space-between;align-items:center;background:#fff}.denom.active{border-color:#ff6b00;background:#fff7ed}.paygrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}.pay{border:2px solid #e5e7eb;border-radius:12px;padding:12px;text-align:center;background:#fff;font-weight:800;font-size:12px}.pay.active{border-color:#ff6b00;background:#fff7ed}.total{margin-top:12px;background:#111;color:#fff;padding:14px;border-radius:12px;display:flex;justify-content:space-between;font-weight:900}.btn-buy{width:100%;margin-top:12px;padding:16px;border:none;border-radius:12px;background:#ff6b00;color:#fff;font-weight:900;font-size:15px}.btn-buy:disabled{background:#ddd;color:#888}.nick{display:none;margin-top:10px;background:#e8ffe8;border:1px solid #a0e0a0;padding:10px;border-radius:8px;font-size:12px}#conf{position:fixed;inset:0;pointer-events:none;z-index:9999;display:none}</style></head><body>
 <canvas id="conf"></canvas>
-<div class="top"><div style="font-weight:800">💎 FRL <span style="color:#f0c75e">TOP UP</span></div><div style="font-size:10px;background:#f0c75e;color:#000;padding:6px 10px;border-radius:100px;font-weight:800" id="gameLabel">PILIH GAME</div></div>
-<div class="step-bar"><div id="s0" class="step active"><b>0</b> Game</div><div id="s1" class="step"><b>1</b> Akun</div><div id="s2" class="step"><b>2</b> Nominal</div><div id="s3" class="step"><b>3</b> Bayar</div></div>
+<div class="top"><div class="logo">💎 FRL <span>TOP UP</span></div><div style="background:#ff6b00;color:#fff;padding:6px 12px;border-radius:100px;font-size:11px;font-weight:900">FIX PENCET</div></div>
+<div class="banner"><div><b style="color:#f0c75e">Top Up Murah</b><br>Proses Detik ⚡<br><small style="color:#a8b3d8;font-size:11px">Garansi • 24 Jam</small></div><div style="font-size:30px">💎</div></div>
 
-<div style="max-width:600px;margin:auto">
-<div class="game-select"><h3>🎮 PILIH GAME - OPSI BEDA-BEDA</h3><div class="game-grid">
-<div class="game-card active" data-game="ml" onclick="selectGame(this,'ml','Mobile Legends')"><div class="ico">💎</div><div class="nm">Mobile Legends</div></div>
-<div class="game-card" data-game="ff" onclick="selectGame(this,'ff','Free Fire')"><div class="ico">🔥</div><div class="nm">Free Fire</div></div>
-<div class="game-card" data-game="pubg" onclick="selectGame(this,'pubg','PUBG Mobile')"><div class="ico">🎯</div><div class="nm">PUBG Mobile</div></div>
-<div class="game-card" data-game="valo" onclick="selectGame(this,'valo','Valorant')"><div class="ico">🔫</div><div class="nm">Valorant</div></div>
-<div class="game-card" data-game="genshin" onclick="selectGame(this,'genshin','Genshin Impact')"><div class="ico">🌟</div><div class="nm">Genshin Impact</div></div>
-<div class="game-card" data-game="roblox" onclick="selectGame(this,'roblox','Roblox')"><div class="ico">🧱</div><div class="nm">Roblox</div></div>
-<div class="game-card" data-game="codm" onclick="selectGame(this,'codm','COD Mobile')"><div class="ico">💣</div><div class="nm">COD Mobile</div></div>
-<div class="game-card" data-game="ewallet" onclick="selectGame(this,'ewallet','E-Wallet')"><div class="ico">💜</div><div class="nm">E-Wallet</div></div>
-</div></div>
+<div class="pill-wrap" id="pillWrap">
+<button class="pill active" data-game="ml">💎 MLBB</button>
+<button class="pill" data-game="ff">🔥 FF</button>
+<button class="pill" data-game="pubg">🎯 PUBG</button>
+<button class="pill" data-game="valo">🔫 Valorant</button>
+<button class="pill" data-game="genshin">🌟 Genshin</button>
+<button class="pill" data-game="ewallet">💜 E-Wallet</button>
+</div>
 
-<div class="card-section"><h3><b>1</b> <span id="accTitle">Masukkan ID Mobile Legends</span></h3><div class="input-group"><input id="uid" class="input" placeholder="User ID"><input id="server" class="input" style="max-width:110px" placeholder="Server"></div><div style="margin-top:8px;display:flex;gap:8px"><button class="btn-check" onclick="checkID()">Cek ID →</button><div style="font-size:10px;color:#8a8db0;display:flex;align-items:center" id="hintCheck">Gratis cek nickname ML</div></div><div id="nickBox" class="nick">✅ Nickname: <b id="nickName">-</b> • <span id="nickExtra">Siap top up</span></div></div>
+<div class="box"><h3>1. User ID</h3><div class="row"><input id="uid" class="inp" placeholder="User ID"><input id="srv" class="inp" style="max-width:90px" placeholder="Server"><button id="btnCheck" class="btn">Cek</button></div><div id="nick" class="nick">✅ Nick: <b id="nickName">-</b></div></div>
 
-<div class="card-section" id="
+<div class="box"><h3>2. Pilih Nominal - TAP DI SINI</h3><div class="grid" id="grid"></div></div>
+
+<div class="box"><h3>3. Metode Bayar - TAP DI SINI</h3><div class="paygrid" id="paygrid">
+<button class="pay active" data-pay="BCA">🏦<br>BCA</button>
+<button class="pay" data-pay="BRI">🏦<br>BRI</button>
+<button class="pay" data-pay="DANA">💜<br>DANA</button>
+<button class="pay" data-pay="OVO">💙<br>OVO</button>
+<button class="pay" data-pay="GoPay">💚<br>GoPay</button>
+<button class="pay" data-pay="QRIS">📱<br>QRIS</button>
+</div>
+<div class="total"><span>Total</span><span id="total">Rp 0</span></div>
+<div style="font-size:11px;color:#666;margin-top:8px">Game: <b id="sGame">MLBB</b> | Akun: <b id="sAcc">- Belum cek</b> | Item: <b id="sItem">- Pilih</b></div>
+<button id="btnBuy" class="btn-buy" disabled>TAP UNTUK BAYAR - HARUS CEK ID DULU</button>
+</div>
+
+<script>
+// DATA GAME BEDA OPSI
+var DATA={
+ml:[['86 DM',20000],['172 DM',39500],['344 DM',79000],['720 DM',158000],['WDP',28000],['Starlight',85000],['3688 DM',798000]],
+ff:[['70 DM',10000],['140 DM',20000],['355 DM',50000],['720 DM',100000],['Member Mingguan',28000]],
+pubg:[['60 UC',15000],['325 UC',75000],['660 UC',150000],['1800 UC',400000]],
+valo:[['125 VP',20000],['420 VP',60000],['700 VP',100000],['1375 VP',200000]],
+genshin:[['60 Crystal',15000],['300 Crystal',75000],['Blessing',75000],['980 Crystal',250000]],
+ewallet:[['DANA 50K',52000],['DANA 100K',102000],['GoPay 50K',52000],['OVO 50K',52000]]
+};
+var cur='ml',item=null,price=0,pay='BCA',checked=false,nick='',last=null;
+var grid=document.getElementById('grid');
+var totalEl=document.getElementById('total');
+var sGame=document.getElementById('sGame');
+var sAcc=document.getElementById('sAcc');
+var sItem=document.getElementById('sItem');
+var btnBuy=document.getElementById('btnBuy');
+var nickBox=document.getElementById('nick');
+
+function render(){
+grid.innerHTML='';
+DATA[cur].forEach(function(it){
+var d=document.createElement('button');
+d.className='denom';
+d.style.width='100%';d.style.textAlign='left';d.style.cursor='pointer';
+d.innerHTML='<b style=font-size:12px>'+it[0]+'</b><b style=color:#ff6b00>Rp '+it[1].toLocaleString('id-ID')+'</b>';
+d.addEventListener('click',function(){
+document.querySelectorAll('.denom').forEach(function(e){e.classList.remove('active')});
+d.classList.add('active');
+item=it[0];price=it[1];
+if(navigator.vibrate)navigator.vibrate(30);
+update();
+});
+grid.appendChild(d);
+});
+}
+
+document.getElementById('pillWrap').querySelectorAll('.pill').forEach(function(p){
+p.addEventListener('click',function(){
+document.querySelectorAll('.pill').forEach(function(e){e.classList.remove('active')});
+p.classList.add('active');
+cur=p.dataset.game;
+sGame.innerText=p.innerText;
+checked=false;item=null;price=0;
+nickBox.style.display='none';
+document.getElementById('uid').value='';
+if(cur==='ewallet'||cur==='valo'||cur==='genshin'){
+document.getElementById('srv').style.display='none';
+}else{
+document.getElementById('srv').style.display='block';
+}
+render();update();
+});
+});
+
+document.getElementById('paygrid').querySelectorAll('.pay').forEach(function(p){
+p.addEventListener('click',function(){
+document.querySelectorAll('.pay').forEach(function(e){e.classList.remove('active')});
+p.classList.add('active');
+pay=p.dataset.pay;
+update();
+if(navigator.vibrate)navigator.vibrate(20);
+});
+});
+
+document.getElementById('btnCheck').addEventListener('click',function(){
+var uid=document.getElementById('uid').value;
+if(!uid){alert('Isi ID dulu min!');return;}
+this.innerText='...';
+var self=this;
+setTimeout(function(){
+nick=['FRL Shaa','RRQ Lemon','EVOS Branz','ONIC Kairi'][Math.floor(Math.random()*4)];
+document.getElementById('nickName').innerText=nick;
+nickBox.style.display='block';
+checked=true;
+self.innerText='✓';
+update();
+if(navigator.vibrate)navigator.vibrate(40);
+},800);
+});
+
+function update(){
+sAcc.innerText=checked?nick+' ('+document.getElementById('uid').value+')':'- Belum cek';
+sItem.innerText=item?item+' - Rp '+price.toLocaleString('id-ID'):'- Pilih';
+totalEl.innerText=price?'Rp '+price.toLocaleString('id-ID'):'Rp 0';
+if(checked&&item){
+btnBuy.disabled=false;
+btnBuy.innerText='💳 BAYAR Rp '+price.toLocaleString('id-ID')+' - TAP DI SINI!';
+btnBuy.style.background='#ff6b00';
+}else{
+btnBuy.disabled=true;
+btnBuy.innerText=checked?'Pilih Nominal Dulu - Tap di atas!':'Cek ID Dulu - Tap Tombol Cek!';
+btnBuy.style.background='#ddd';
+}
+}
+
+btnBuy.addEventListener('click',function(){
+if(!checked||!item){alert('Lengkapi dulu!');return;}
+var id='FRL-'+Math.floor(100000+Math.random()*900000);
+last={id:id,game:sGame.innerText,item:item,price:price,pay:pay,nick:nick,uid:document.getElementById('uid').value};
+
+// CONFETTI SIMPLE
+var canvas=document.getElementById('conf');
+canvas.style.display='block';
+canvas.width=innerWidth;canvas.height=innerHeight;
+var ctx=canvas.getContext('2d');
+var parts=[];
+for(var i=0;i<120;i++)parts.push({x:Math.random()*canvas.width,y:-20,vx:(Math.random()-0.5)*6,vy:Math.random()*4+2,r:Math.random()*5+3,c:['#ff6b00','#25D366','#111'][Math.floor(Math.random()*3)],rot:Math.random()*360});
+(function anim(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+var alive=false;
+for(var i=0;i<parts.length;i++){
+var p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.06;
+if(p.y<canvas.height+20){alive=true;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r);ctx.restore();}
+}
+if(alive)requestAnimationFrame(anim);else{ctx.clearRect(0,0,canvas.width,canvas.height);canvas.style.display='none';}
+})();
+if(navigator.vibrate)navigator.vibrate([60,30,60]);
+
+setTimeout(function(){
+var msg='Halo min FRL TOP UP!%0A%0AID Pesanan: '+last.id+'%0AGame: '+last.game+'%0ANick: '+last.nick+'%0AUser ID: '+last.uid+'%0AItem: '+last.item+'%0ATotal: Rp '+last.price.toLocaleString('id-ID')+'%0ABayar: '+last.pay+'%0A%0AProses ya min!';
+if(confirm('✅ PESANAN BERHASIL!%0A%0AID: '+last.id+'%0A'+last.item+'%0ATotal: Rp '+last.price.toLocaleString('id-ID')+'%0A%0ATap OK untuk konfirmasi WA Shaa')){
+window.open('https://wa.me/6289519286925?text='+msg,'_blank');
+}
+},400);
+});
+
+render();update();
+</script>
+</body></html>
