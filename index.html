@@ -22,12 +22,16 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 .games-scroll{display:flex;gap:12px;overflow-x:auto;padding:10px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .games-scroll::-webkit-scrollbar{display:none}
 .game-item{min-width:110px;scroll-snap-align:start;cursor:pointer;text-align:center;flex-shrink:0}
-.game-item img{width:110px;height:120px;object-fit:cover;border-radius:12px;background:#444;display:block}
+.game-box{width:110px;height:120px;border-radius:12px;overflow:hidden;position:relative;background:#444}
+.game-box img{width:100%;height:100%;object-fit:cover;display:block}
+.game-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
+.game-fallback b{font-size:28px}
+.game-fallback small{font-size:11px;font-weight:800;margin-top:4px}
 .game-item p{font-size:13px;font-weight:700;margin-top:6px;line-height:1.2}
 .sec{padding:6px 14px}
 .sec h2{font-size:24px;font-weight:900;margin:10px 0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.grid3 img{width:100%;height:110px;object-fit:cover;border-radius:12px;background:#444}
+.grid3 .game-box{width:100%}
 .grid3 p{font-size:13px;font-weight:700;text-align:center;margin-top:6px}
 #formTopup{display:none;background:white;color:#111;border-radius:16px;margin:14px;padding:16px}
 .row{display:flex;gap:8px}
@@ -52,7 +56,7 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 <div style="font-size:24px">☰</div>
 <div class="logo">💎 FRL<br><span>TOP UP</span></div>
 <div>🔍</div><div>🪙</div><div>🇮🇩</div>
-<button class="btn-daftar" onclick="window.open('https://wa.me/6281234567890?text=Halo%20min','_blank')">Daftar</button>
+<button class="btn-daftar" onclick="waCS()">Daftar</button>
 </div>
 
 <div class="banner-scroll">
@@ -64,22 +68,22 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 
 <div class="sec"><h2>REKOMENDASI - GESER ▶</h2></div>
 <div class="games-scroll">
-<div class="game-item" onclick="pilihGame('MLBB')"><img src="mlbb.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg'"><p>Mobile Legends</p></div>
-<div class="game-item" onclick="pilihGame('FF')"><img src="ff.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg'"><p>Free Fire</p></div>
-<div class="game-item" onclick="pilihGame('PUBG')"><img src="pubg.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg'"><p>PUBG Mobile</p></div>
-<div class="game-item" onclick="pilihGame('Valorant')"><img src="valorant.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg'"><p>Valorant</p></div>
-<div class="game-item" onclick="pilihGame('Genshin')"><img src="genshin.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg'"><p>Genshin</p></div>
-<div class="game-item" onclick="pilihGame('Roblox')"><img src="roblox.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Roblox/Roblox-326x190.jpg'"><p>Roblox</p></div>
+<div class="game-item" onclick="pilihGame('MLBB')"><div class="game-box" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>⚔️</b><small>MLBB</small></div></div><p>Mobile Legends</p></div>
+<div class="game-item" onclick="pilihGame('FF')"><div class="game-box" style="background:linear-gradient(135deg,#f97316,#ea580c)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🔥</b><small>FREE FIRE</small></div></div><p>Free Fire</p></div>
+<div class="game-item" onclick="pilihGame('PUBG')"><div class="game-box" style="background:linear-gradient(135deg,#eab308,#a16207)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🎯</b><small>PUBG</small></div></div><p>PUBG Mobile</p></div>
+<div class="game-item" onclick="pilihGame('Valorant')"><div class="game-box" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>💥</b><small>VALORANT</small></div></div><p>Valorant</p></div>
+<div class="game-item" onclick="pilihGame('Genshin')"><div class="game-box" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>✨</b><small>GENSHIN</small></div></div><p>Genshin</p></div>
+<div class="game-item" onclick="pilihGame('Roblox')"><div class="game-box" style="background:linear-gradient(135deg,#333,#111)"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🧱</b><small>ROBLOX</small></div></div><p>Roblox</p></div>
 </div>
 
 <div class="sec"><h2>UNGGULAN</h2>
 <div class="grid3">
-<div onclick="pilihGame('MLBB')"><img src="mlbb.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg'"><p>Mobile Legends</p></div>
-<div onclick="pilihGame('FF')"><img src="ff.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg'"><p>Free Fire</p></div>
-<div onclick="pilihGame('PUBG')"><img src="pubg.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg'"><p>PUBG Mobile</p></div>
-<div onclick="pilihGame('Valorant')"><img src="valorant.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg'"><p>Valorant</p></div>
-<div onclick="pilihGame('Genshin')"><img src="genshin.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg'"><p>Genshin</p></div>
-<div onclick="pilihGame('Roblox')"><img src="roblox.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Roblox/Roblox-326x190.jpg'"><p>Roblox</p></div>
+<div onclick="pilihGame('MLBB')"><div class="game-box" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>⚔️</b><small>MLBB</small></div></div><p>Mobile Legends</p></div>
+<div onclick="pilihGame('FF')"><div class="game-box" style="background:linear-gradient(135deg,#f97316,#ea580c)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🔥</b><small>FREE FIRE</small></div></div><p>Free Fire</p></div>
+<div onclick="pilihGame('PUBG')"><div class="game-box" style="background:linear-gradient(135deg,#eab308,#a16207)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🎯</b><small>PUBG</small></div></div><p>PUBG Mobile</p></div>
+<div onclick="pilihGame('Valorant')"><div class="game-box" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>💥</b><small>VALORANT</small></div></div><p>Valorant</p></div>
+<div onclick="pilihGame('Genshin')"><div class="game-box" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>✨</b><small>GENSHIN</small></div></div><p>Genshin</p></div>
+<div onclick="pilihGame('Roblox')"><div class="game-box" style="background:linear-gradient(135deg,#333,#111)"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🧱</b><small>ROBLOX</small></div></div><p>Roblox</p></div>
 </div>
 </div>
 
@@ -91,22 +95,24 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 <div class="nom-wrap" id="nomWrap"></div>
 <h3 style="margin-top:16px">3. Pilih Pembayaran</h3>
 <div class="pay">
-<div class="pay-item" onclick="pilihPay(this,'DANA')"><img src="dana.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_DANA.png'"><p>DANA</p></div>
-<div class="pay-item" onclick="pilihPay(this,'OVO')"><img src="ovo.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg'"><p>OVO</p></div>
-<div class="pay-item" onclick="pilihPay(this,'GoPay')"><img src="gopay.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg'"><p>GoPay</p></div>
-<div class="pay-item" onclick="pilihPay(this,'ShopeePay')"><img src="shopeepay.png" onerror="this.src='https://images.seeklogo.com/logo-png/33/1/shopeepay-logo-png_seeklogo-332544.png'"><p>ShopeePay</p></div>
-<div class="pay-item" onclick="pilihPay(this,'QRIS')"><img src="qris.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg'"><p>QRIS</p></div>
-<div class="pay-item" onclick="pilihPay(this,'Bank')"><img src="bank.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2830/2830284.png'"><p>Bank</p></div>
+<div class="pay-item" onclick="pilihPay(this,'DANA')"><div style="background:#118EEA;color:white;font-weight:800;padding:10px;border-radius:8px">DANA</div><p>DANA</p></div>
+<div class="pay-item" onclick="pilihPay(this,'OVO')"><div style="background:#4C2A85;color:white;font-weight:800;padding:10px;border-radius:8px">OVO</div><p>OVO</p></div>
+<div class="pay-item" onclick="pilihPay(this,'GoPay')"><div style="background:#00AA13;color:white;font-weight:800;padding:10px;border-radius:8px">GoPay</div><p>GoPay</p></div>
+<div class="pay-item" onclick="pilihPay(this,'ShopeePay')"><div style="background:#EE4D2D;color:white;font-weight:800;padding:10px;border-radius:8px">ShopeePay</div><p>ShopeePay</p></div>
+<div class="pay-item" onclick="pilihPay(this,'QRIS')"><div style="background:#111;color:white;font-weight:800;padding:10px;border-radius:8px">QRIS</div><p>QRIS</p></div>
+<div class="pay-item" onclick="pilihPay(this,'Bank')"><div style="background:#64748b;color:white;font-weight:800;padding:10px;border-radius:8px">BANK</div><p>Bank</p></div>
 </div>
 <div id="qrisBox" style="display:none;text-align:center;margin-top:12px;border:1px dashed #999;padding:12px;border-radius:12px"><b>Scan QRIS Ini</b><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FRLTOPUP" style="width:160px;height:160px"><p style="font-size:12px">FRL TOP UP</p></div>
 </div>
 
-<a class="wa" href="https://wa.me/6281234567890?text=Halo%20min" target="_blank">💬</a>
+<a class="wa" href="#" onclick="waCS();return false;">💬</a>
 <div class="sticky"><div><small>Total Bayar</small><br><b id="totalTxt">Rp 0</b><br><small id="totalNote">Pilih game dulu</small></div><button class="btn-beli" onclick="beli()">BELI SEKARANG</button></div>
 
 <script>
+var WA_NUMBER = "6289519286925";
 var gameNow=""; var nomNow=""; var hargaNow=""; var payNow="";
 var nominals={"MLBB":[["86 DM","Rp 20.000"],["172 DM","Rp 39.500"],["257 DM","Rp 59.000"],["706 DM","Rp 160.000"]],"FF":[["70 DM","Rp 10.000"],["140 DM","Rp 20.000"],["355 DM","Rp 50.000"],["720 DM","Rp 100.000"]],"PUBG":[["60 UC","Rp 15.000"],["325 UC","Rp 75.000"],["660 UC","Rp 150.000"]],"Valorant":[["475 VP","Rp 50.000"],["1000 VP","Rp 100.000"]],"Genshin":[["60 Genesis","Rp 16.000"],["300+30 Genesis","Rp 79.000"]],"Roblox":[["80 Robux","Rp 15.000"],["400 Robux","Rp 70.000"]]};
+function waCS(){window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent("Halo FRL! Mau tanya top up"),"_blank");}
 function pilihGame(nama){
   gameNow=nama; nomNow=""; hargaNow=""; payNow="";
   document.getElementById("formTopup").style.display="block";
@@ -153,7 +159,7 @@ function beli(){
   if(!nomNow){alert("Pilih nominal dulu!");return;}
   if(!payNow){alert("Pilih pembayaran dulu!");return;}
   var msg="Halo FRL! Mau top up "+gameNow+" - "+nomNow+" - "+hargaNow+" ID:"+id+" Bayar via "+payNow;
-  window.open("https://wa.me/6281234567890?text="+encodeURIComponent(msg),"_blank");
+  window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
 }
 </script>
 </body>
