@@ -3,24 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FRL TOP UP - Mirip Codashop</title>
+<title>FRL TOP UP</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-tap-highlight-color:transparent}
 body{background:#2D0A3E;color:white;padding-bottom:110px}
-a{color:inherit;text-decoration:none}
-
-/* HEADER PERSIS CODASHOP */
 .header{background:#2D0A3E;display:flex;align-items:center;gap:12px;padding:12px 14px;position:sticky;top:0;z-index:50}
-.hamburger{font-size:26px;line-height:1}
-.logo{display:flex;align-items:center;gap:6px;font-weight:900;font-size:17px;letter-spacing:.5px;flex:1}
-.logo i{font-size:22px;font-style:normal}
-.logo span{color:white}
-.header-icons{display:flex;align-items:center;gap:12px;font-size:20px}
+.logo{display:flex;align-items:center;gap:6px;font-weight:900;font-size:17px;flex:1}
 .btn-daftar{background:#5B5BF6;color:white;border:0;padding:9px 18px;border-radius:999px;font-weight:700;font-size:14px}
-.flag{font-size:18px}
-
-/* BANNER PERSIS CODASHOP - FULL WIDTH */
-.banner-wrap{position:relative;overflow:hidden}
 .banner-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 .banner-scroll::-webkit-scrollbar{display:none}
 .banner{min-width:100%;height:180px;scroll-snap-align:center;position:relative;display:flex;align-items:center;overflow:hidden;cursor:pointer;flex-shrink:0}
@@ -28,43 +17,41 @@ a{color:inherit;text-decoration:none}
 .banner-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,0,30,.9) 0%,rgba(20,0,30,.6) 45%,transparent 80%)}
 .banner-text{position:relative;z-index:2;padding:0 18px;max-width:62%}
 .banner-text small{font-style:italic;font-weight:800;opacity:.9}
-.banner-text h2{font-size:26px;line-height:.95;font-weight:900;letter-spacing:-.5px;margin:8px 0;color:#FF6B9D}
+.banner-text h2{font-size:26px;line-height:.95;font-weight:900;margin:8px 0;color:#FF6B9D}
 .banner-text h2 span{color:white}
 .banner-text .cta{background:#FFE500;color:#111;font-size:10px;font-weight:900;padding:5px 9px;border-radius:999px;display:inline-block}
 .dots{display:flex;justify-content:center;gap:7px;padding:12px 0 4px}
 .dot{width:9px;height:9px;border-radius:50%;background:#7A5A90}
 .dot.active{background:white;width:11px;height:11px}
 
-/* REKOMENDASI PERSIS CODASHOP */
-.sec{padding:10px 14px 0}
-.sec h2{font-size:32px;font-weight:900;letter-spacing:1px;line-height:1;margin:6px 0 12px}
+/* INI YANG PERSIS KAYA CODASHOP - KARTU PANJANG KE BAWAH */
+.sec{padding:14px 14px 0}
+.sec h2{font-size:38px;font-weight:900;letter-spacing:1.5px;margin:6px 0 14px;line-height:1;text-transform:uppercase}
 .games-scroll{display:flex;gap:12px;overflow-x:auto;padding:0 14px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .games-scroll::-webkit-scrollbar{display:none}
-.game-card{min-width:148px;width:148px;scroll-snap-align:start;cursor:pointer;flex-shrink:0;background:#3A124E;border-radius:12px;overflow:hidden}
-.game-card .thumb{width:100%;height:150px;position:relative;background:#222;overflow:hidden}
+.game-card{min-width:158px;width:158px;scroll-snap-align:start;cursor:pointer;flex-shrink:0;background:#3D1150;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.game-card .thumb{width:100%;height:155px;overflow:hidden;background:#222;flex-shrink:0}
 .game-card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.game-card .thumb .fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:44px}
-.game-card p{font-size:14px;font-weight:600;text-align:center;padding:12px 8px 14px;line-height:1.2}
+.game-card .txt{flex:1;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:14px 8px 18px}
+.game-card .txt p{font-size:16px;font-weight:600;line-height:1.25}
 
-/* UNGGULAN - GRID 3 PERSIS CODASHOP */
+/* UNGGULAN - GRID 3, SEMUA PANJANG KE BAWAH KAYA CODASHOP */
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 14px}
 .grid3 .game-card{min-width:0;width:100%}
-.grid3 .game-card .thumb{height:112px}
-.grid3 .game-card p{font-size:12px;padding:10px 4px}
+.grid3 .game-card .thumb{height:118px}
+.grid3 .game-card .txt{padding:12px 4px 16px}
+.grid3 .game-card .txt p{font-size:13px}
 
-/* FORM TOPUP */
 #formTopup{display:none;background:white;color:#111;border-radius:16px;margin:16px 14px;padding:18px}
-#formTopup h3{font-size:16px;margin-bottom:10px}
 .input-col{display:flex;flex-direction:column;gap:8px}
-.input-col input{padding:13px;border:1.5px solid #E5E7EB;border-radius:10px;font-size:14px;width:100%;outline:none}
-.input-col input:focus{border-color:#7C3AED}
+.input-col input{padding:13px;border:1.5px solid #E5E7EB;border-radius:10px;font-size:14px;width:100%}
 .input-row{display:flex;gap:8px}
 .input-row input{flex:1;min-width:0}
 .btn-cek{background:#2D0A3E;color:white;border:0;padding:13px 18px;border-radius:10px;font-weight:700;flex-shrink:0}
 .nom-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
 .nom{border:2px solid #E5E7EB;border-radius:12px;padding:13px;cursor:pointer;text-align:center;background:#fff}
 .nom.active{border-color:#7C3AED;background:#EDE9FE}
-.nom b{color:#7C3AED;display:block;font-size:14px} .nom span{color:#F97316;font-weight:700;font-size:13px}
+.nom b{color:#7C3AED;display:block} .nom span{color:#F97316;font-weight:700;font-size:13px}
 .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
 .pay-item{border:2px solid #E5E7EB;border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;background:white}
 .pay-item.active{border-color:#7C3AED;background:#EDE9FE}
@@ -72,63 +59,54 @@ a{color:inherit;text-decoration:none}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:white;color:#111;display:flex;align-items:center;gap:12px;padding:12px 14px;z-index:30;box-shadow:0 -2px 12px rgba(0,0,0,.25)}
 .btn-beli{flex:1;background:#FF6A00;color:white;border:0;padding:14px;border-radius:12px;font-weight:800;font-size:15px}
 .footer{padding:20px 14px;text-align:center;font-size:12px;color:#B8A5C8;line-height:1.6}
+.show-all{text-align:center;color:#FFD700;font-size:14px;font-weight:700;padding:12px;text-decoration:underline}
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <div class="header">
-<div class="hamburger">☰</div>
-<div class="logo"><i>💎</i><span>FRL SHOP</span></div>
-<div class="header-icons"><span>🔍</span><span>🪙</span><span class="flag">🇮🇩 ID</span></div>
+<div style="font-size:26px">☰</div>
+<div class="logo">💎 FRL SHOP</div>
+<div style="display:flex;gap:12px;font-size:20px"><span>🔍</span><span>🪙</span><span>🇮🇩 ID</span></div>
 <button class="btn-daftar" onclick="waCS()">Daftar</button>
 </div>
 
-<!-- BANNER -->
-<div class="banner-wrap">
 <div class="banner-scroll" id="bannerScroll">
-<div class="banner" onclick="pilihGame('MLBB')">
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" onerror="this.style.display='none'">
-<div class="banner-overlay"></div>
-<div class="banner-text"><small>FRL TOP UP</small><h2>MLBB<br><span>KINI ADA<br>DI FRL!</span></h2><span class="cta">TOP UP SEKARANG</span></div>
-</div>
-<div class="banner" onclick="pilihGame('FF')">
-<img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80" onerror="this.style.display='none'">
-<div class="banner-overlay" style="background:linear-gradient(90deg,rgba(50,10,0,.9),rgba(50,10,0,.4) 50%,transparent)"></div>
-<div class="banner-text"><small>FREE FIRE</small><h2 style="color:#FFB800">TOP UP FF<br><span>MURAH<br>1 MENIT!</span></h2><span class="cta">TOP UP SEKARANG</span></div>
-</div>
-<div class="banner" onclick="pilihGame('PUBG')">
-<img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=800&q=80" onerror="this.style.display='none'">
-<div class="banner-overlay" style="background:linear-gradient(90deg,rgba(0,20,50,.9),rgba(0,20,50,.4) 50%,transparent)"></div>
-<div class="banner-text"><small>PUBG MOBILE</small><h2 style="color:#38BDF8">TOP UP UC<br><span>MURAH<br>GARANSI!</span></h2><span class="cta">TOP UP SEKARANG</span></div>
-</div>
-</div>
+<div class="banner" onclick="pilihGame('MLBB')"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg&w=800"><div class="banner-overlay"></div><div class="banner-text"><small>FRL TOP UP</small><h2>MLBB<br><span>KINI ADA<br>DI FRL!</span></h2><span class="cta">TOP UP SEKARANG</span></div></div>
+<div class="banner" onclick="pilihGame('FF')"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg&w=800"><div class="banner-overlay"></div><div class="banner-text"><small>FREE FIRE</small><h2 style="color:#FFB800">TOP UP FF<br><span>MURAH<br>1 MENIT!</span></h2><span class="cta">TOP UP SEKARANG</span></div></div>
+<div class="banner" onclick="pilihGame('PUBG')"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg&w=800"><div class="banner-overlay"></div><div class="banner-text"><small>PUBG MOBILE</small><h2 style="color:#38BDF8">TOP UP UC<br><span>MURAH<br>GARANSI!</span></h2><span class="cta">TOP UP SEKARANG</span></div></div>
 </div>
 <div class="dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
 
-<!-- REKOMENDASI -->
+<!-- REKOMENDASI - PERSIS CODASHOP -->
 <div class="sec"><h2>REKOMENDASI</h2></div>
 <div class="games-scroll">
-<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb" style="background:linear-gradient(135deg,#7C3AED,#2D0A3E)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">⚔️</div></div><p>Mobile<br>Legends:<br>Bang Bang</p></div>
-<div class="game-card" onclick="pilihGame('FF')"><div class="thumb" style="background:linear-gradient(135deg,#F97316,#7C2D12)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🔥</div></div><p>Free Fire</p></div>
-<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb" style="background:linear-gradient(135deg,#EAB308,#713F12)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🎯</div></div><p>PUBG<br>Mobile</p></div>
-<div class="game-card" onclick="pilihGame('Valorant')"><div class="thumb" style="background:linear-gradient(135deg,#EF4444,#7F1D1D)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">💥</div></div><p>Valorant</p></div>
-<div class="game-card" onclick="pilihGame('Genshin')"><div class="thumb" style="background:linear-gradient(135deg,#38BDF8,#0C4A6E)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">✨</div></div><p>Genshin<br>Impact</p></div>
-<div class="game-card" onclick="pilihGame('Roblox')"><div class="thumb" style="background:#1F2937"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🧱</div></div><p>Roblox</p></div>
+<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg&w=500"></div><div class="txt"><p>Mobile<br>Legends:<br>Bang Bang</p></div></div>
+<div class="game-card" onclick="pilihGame('FF')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg&w=500"></div><div class="txt"><p>Free Fire<br>Top-up</p></div></div>
+<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg&w=500"></div><div class="txt"><p>PUBG<br>Mobile</p></div></div>
+<div class="game-card" onclick="pilihGame('Valorant')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg&w=500"></div><div class="txt"><p>Valorant</p></div></div>
+<div class="game-card" onclick="pilihGame('Genshin')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg&w=500"></div><div class="txt"><p>Genshin<br>Impact</p></div></div>
+<div class="game-card" onclick="pilihGame('Roblox')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/Roblox/Roblox-326x190.jpg&w=500"></div><div class="txt"><p>Roblox</p></div></div>
 </div>
 
-<!-- UNGGULAN -->
+<!-- UNGGULAN - PERSIS CODASHOP -->
 <div class="sec"><h2>UNGGULAN</h2></div>
 <div class="grid3">
-<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb" style="background:linear-gradient(135deg,#7C3AED,#2D0A3E)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">⚔️</div></div><p>Mobile Legends</p></div>
-<div class="game-card" onclick="pilihGame('FF')"><div class="thumb" style="background:linear-gradient(135deg,#F97316,#7C2D12)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🔥</div></div><p>Free Fire</p></div>
-<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb" style="background:linear-gradient(135deg,#EAB308,#713F12)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🎯</div></div><p>PUBG Mobile</p></div>
-<div class="game-card" onclick="pilihGame('Valorant')"><div class="thumb" style="background:linear-gradient(135deg,#EF4444,#7F1D1D)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">💥</div></div><p>Valorant</p></div>
-<div class="game-card" onclick="pilihGame('Genshin')"><div class="thumb" style="background:linear-gradient(135deg,#38BDF8,#0C4A6E)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">✨</div></div><p>Genshin Impact</p></div>
-<div class="game-card" onclick="pilihGame('Roblox')"><div class="thumb" style="background:#1F2937"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🧱</div></div><p>Roblox</p></div>
+<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg&w=500"></div><div class="txt"><p>Mobile<br>Legends:<br>Bang Bang</p></div></div>
+<div class="game-card" onclick="pilihGame('FF')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg&w=500"></div><div class="txt"><p>Free Fire<br>Top-up</p></div></div>
+<div class="game-card" onclick="pilihGame('Steam')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/Steam/Steam-326x190.jpg&w=500" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg'"></div><div class="txt"><p>Steam<br>Wallet Code<br>- Indonesia</p></div></div>
+<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg&w=500"></div><div class="txt"><p>PUBG<br>Mobile</p></div></div>
+<div class="game-card" onclick="pilihGame('Valorant')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg&w=500"></div><div class="txt"><p>Valorant</p></div></div>
+<div class="game-card" onclick="pilihGame('Genshin')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg&w=500"></div><div class="txt"><p>Genshin<br>Impact</p></div></div>
 </div>
 
-<!-- FORM -->
+<div class="sec"><h2 style="font-size:30px">TOP UP<br>LANGSUNG</h2></div>
+<div class="grid3">
+<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg&w=500"></div><div class="txt"><p>Mobile Legends</p></div></div>
+<div class="game-card" onclick="pilihGame('FF')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg&w=500"></div><div class="txt"><p>Free Fire</p></div></div>
+<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb"><img src="https://wsrv.nl/?url=cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg&w=500"></div><div class="txt"><p>PUBG Mobile</p></div></div>
+</div>
+<div class="show-all">Tampilkan semua</div>
+
 <div id="formTopup">
 <h3 id="judulGame">1. Top Up MLBB</h3>
 <div class="input-col">
@@ -152,13 +130,12 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <div class="footer">FRL TOP UP - Top Up Game Murah, Cepat & Aman<br>WA: 089519286925 | Proses 1 Menit</div>
-
 <div class="sticky"><div><small>Total Bayar</small><br><b id="totalTxt">Rp 0</b><br><small id="totalNote">Pilih game dulu</small></div><button class="btn-beli" onclick="beli()">BELI SEKARANG</button></div>
 
 <script>
 var WA_NUMBER = "6289519286925";
 var gameNow=""; var nomNow=""; var hargaNow=""; var payNow="";
-var nominals={"MLBB":[["86 DM","Rp 20.000"],["172 DM","Rp 39.500"],["257 DM","Rp 59.000"],["706 DM","Rp 160.000"]],"FF":[["70 DM","Rp 10.000"],["140 DM","Rp 20.000"],["355 DM","Rp 50.000"],["720 DM","Rp 100.000"]],"PUBG":[["60 UC","Rp 15.000"],["325 UC","Rp 75.000"],["660 UC","Rp 150.000"]],"Valorant":[["475 VP","Rp 50.000"],["1000 VP","Rp 100.000"]],"Genshin":[["60 Genesis","Rp 16.000"],["300+30 Genesis","Rp 79.000"]],"Roblox":[["80 Robux","Rp 15.000"],["400 Robux","Rp 70.000"]]};
+var nominals={"MLBB":[["86 DM","Rp 20.000"],["172 DM","Rp 39.500"],["257 DM","Rp 59.000"],["706 DM","Rp 160.000"]],"FF":[["70 DM","Rp 10.000"],["140 DM","Rp 20.000"],["355 DM","Rp 50.000"],["720 DM","Rp 100.000"]],"PUBG":[["60 UC","Rp 15.000"],["325 UC","Rp 75.000"],["660 UC","Rp 150.000"]],"Valorant":[["475 VP","Rp 50.000"],["1000 VP","Rp 100.000"]],"Genshin":[["60 Genesis","Rp 16.000"],["300+30 Genesis","Rp 79.000"]],"Roblox":[["80 Robux","Rp 15.000"],["400 Robux","Rp 70.000"]],"Steam":[["12K","Rp 12.000"],["45K","Rp 45.000"],["60K","Rp 60.000"]]};
 function waCS(){window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent("Halo FRL! Mau tanya top up"),"_blank");}
 function pilihGame(nama){
   gameNow=nama; nomNow=""; hargaNow=""; payNow="";
@@ -171,52 +148,13 @@ function pilihGame(nama){
   document.getElementById("nomWrap").innerHTML=html;
   document.getElementById("formTopup").scrollIntoView({behavior:"smooth"});
   document.getElementById("serverId").style.display=(nama=="FF")?"none":"block";
-  setTimeout(function(){
-    var first=document.querySelector(".nom");
-    if(first){first.click();}
-    var dana=document.querySelectorAll(".pay-item")[0];
-    if(dana){dana.click();}
-  },100);
+  setTimeout(function(){var first=document.querySelector(".nom");if(first){first.click();}var dana=document.querySelectorAll(".pay-item")[0];if(dana){dana.click();}},100);
 }
-function pilihNom(el,nama,harga){
-  var all=document.querySelectorAll(".nom");
-  for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
-  el.classList.add("active");
-  nomNow=nama; hargaNow=harga;
-  document.getElementById("totalTxt").innerText=harga;
-  document.getElementById("totalNote").innerText=gameNow+" - "+nama;
-}
-function pilihPay(el,nama){
-  var all=document.querySelectorAll(".pay-item");
-  for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
-  el.classList.add("active");
-  payNow=nama;
-  var q=document.getElementById("qrisBox");
-  if(q){q.style.display=(nama=="QRIS")?"block":"none";}
-}
-function cekID(){
-  var id=document.getElementById("userId").value;
-  if(!id){alert("Isi ID dulu!");return;}
-  document.getElementById("cekResult").innerText="✅ Akun ditemukan: Player_"+id.slice(-4)+" ("+gameNow+")";
-}
-function beli(){
-  var id=document.getElementById("userId").value;
-  if(!gameNow){alert("Pilih game dulu!");return;}
-  if(!id){alert("Isi ID dulu!");return;}
-  if(!nomNow){alert("Pilih nominal dulu!");return;}
-  if(!payNow){alert("Pilih pembayaran dulu!");return;}
-  var msg="Halo FRL! Mau top up "+gameNow+" - "+nomNow+" - "+hargaNow+" ID:"+id+" Bayar via "+payNow;
-  window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
-}
-// Auto geser banner + dots
-var bannerEl=document.getElementById("bannerScroll");
-var bannerIdx=0;
-setInterval(function(){
-  bannerIdx=(bannerIdx+1)%3;
-  bannerEl.scrollTo({left:bannerEl.clientWidth*bannerIdx,behavior:"smooth"});
-  var dots=document.querySelectorAll(".dot");
-  for(var i=0;i<dots.length;i++){dots[i].classList.toggle("active",i==bannerIdx);}
-},4000);
+function pilihNom(el,nama,harga){var all=document.querySelectorAll(".nom");for(var i=0;i<all.length;i++){all[i].classList.remove("active");}el.classList.add("active");nomNow=nama;hargaNow=harga;document.getElementById("totalTxt").innerText=harga;document.getElementById("totalNote").innerText=gameNow+" - "+nama;}
+function pilihPay(el,nama){var all=document.querySelectorAll(".pay-item");for(var i=0;i<all.length;i++){all[i].classList.remove("active");}el.classList.add("active");payNow=nama;var q=document.getElementById("qrisBox");if(q){q.style.display=(nama=="QRIS")?"block":"none";}}
+function cekID(){var id=document.getElementById("userId").value;if(!id){alert("Isi ID dulu!");return;}document.getElementById("cekResult").innerText="✅ Akun ditemukan: Player_"+id.slice(-4)+" ("+gameNow+")";}
+function beli(){var id=document.getElementById("userId").value;if(!gameNow){alert("Pilih game dulu!");return;}if(!id){alert("Isi ID dulu!");return;}if(!nomNow){alert("Pilih nominal dulu!");return;}if(!payNow){alert("Pilih pembayaran dulu!");return;}var msg="Halo FRL! Mau top up "+gameNow+" - "+nomNow+" - "+hargaNow+" ID:"+id+" Bayar via "+payNow;window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg),"_blank");}
+var bannerEl=document.getElementById("bannerScroll");var bannerIdx=0;setInterval(function(){bannerIdx=(bannerIdx+1)%3;bannerEl.scrollTo({left:bannerEl.clientWidth*bannerIdx,behavior:"smooth"});var dots=document.querySelectorAll(".dot");for(var i=0;i<dots.length;i++){dots[i].classList.toggle("active",i==bannerIdx);}},4000);
 </script>
 </body>
 </html>
