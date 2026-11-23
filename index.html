@@ -3,164 +3,765 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FRL TOP UP</title>
+
+<title>IBNU STORE | Top Up Game Murah & Terpercaya</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;-webkit-tap-highlight-color:transparent}
-body{background:#2a0a4a;color:white;padding-bottom:110px}
-.top{background:#2a0a4a;display:flex;align-items:center;gap:10px;padding:12px 14px;position:sticky;top:0;z-index:20}
-.logo{font-weight:900;font-size:18px;flex:1;line-height:1.1}
-.logo span{color:#f97316}
-.btn-daftar{background:#6d28d9;color:white;border:0;padding:8px 16px;border-radius:20px;font-weight:700}
-.banner-scroll{display:flex;gap:10px;overflow-x:auto;padding:0 14px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.banner-scroll::-webkit-scrollbar{display:none}
-.banner{min-width:92%;scroll-snap-align:center;border-radius:14px;padding:20px;background:linear-gradient(135deg,#7c3aed,#db2777,#f97316);min-height:170px;flex-shrink:0;cursor:pointer}
-.banner2{background:linear-gradient(135deg,#f97316,#eab308,#16a34a)}
-.banner3{background:linear-gradient(135deg,#0ea5e9,#2563eb,#7c3aed)}
-.banner h2{font-size:26px;line-height:1.1;margin-top:8px}
-.banner span{background:#facc15;color:black;font-size:11px;font-weight:800;padding:5px 10px;border-radius:10px;display:inline-block;margin-top:10px}
-.dots{text-align:center;padding:8px;font-size:12px;color:#c4b5fd}
-.games-scroll{display:flex;gap:12px;overflow-x:auto;padding:10px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.games-scroll::-webkit-scrollbar{display:none}
-.game-item{min-width:110px;scroll-snap-align:start;cursor:pointer;text-align:center;flex-shrink:0}
-.game-box{width:110px;height:120px;border-radius:12px;overflow:hidden;position:relative;background:#444}
-.game-box img{width:100%;height:100%;object-fit:cover;display:block}
-.game-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
-.game-fallback b{font-size:28px}
-.game-fallback small{font-size:11px;font-weight:800;margin-top:4px}
-.game-item p{font-size:13px;font-weight:700;margin-top:6px;line-height:1.2}
-.sec{padding:6px 14px}
-.sec h2{font-size:24px;font-weight:900;margin:10px 0}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.grid3 .game-box{width:100%}
-.grid3 p{font-size:13px;font-weight:700;text-align:center;margin-top:6px}
-#formTopup{display:none;background:white;color:#111;border-radius:16px;margin:14px;padding:16px}
-.row{display:flex;gap:8px}
-.row input{flex:1;padding:12px;border:1.5px solid #ddd;border-radius:10px;font-size:14px;min-width:0}
-.btn-cek{background:#2a0a4a;color:white;border:0;padding:12px 18px;border-radius:10px;font-weight:700}
-.nom-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-.nom{border:2px solid #ddd;border-radius:12px;padding:12px;cursor:pointer;text-align:center;background:#fff}
-.nom.active{border-color:#6d28d9;background:#ede9fe}
-.nom b{color:#6d28d9;display:block} .nom span{color:#f97316;font-weight:700;font-size:13px}
-.pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.pay-item{border:2px solid #ddd;border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;background:white}
-.pay-item.active{border-color:#6d28d9;background:#ede9fe}
-.pay-item img{width:70px;height:38px;object-fit:contain}
-.pay-item p{font-size:12px;font-weight:700;margin-top:4px}
-.sticky{position:fixed;bottom:0;left:0;right:0;background:white;color:#111;display:flex;align-items:center;gap:12px;padding:12px 14px;z-index:30}
-.btn-beli{flex:1;background:#f97316;color:white;border:0;padding:14px;border-radius:12px;font-weight:800;font-size:15px}
-.wa{position:fixed;right:14px;bottom:95px;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;z-index:40}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0b16;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #6500ff, #a600ff);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px #6500ff;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #171727;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    transition: color 0.2s ease, transform 0.1s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #bd80ff;
+}
+
+nav a:active {
+    transform: scale(0.92);
+}
+
+/* HERO */
+.hero {
+    padding: 45px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #16002d, #30005e);
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 13px 30px;
+    border: none;
+    border-radius: 10px;
+    background: #a600ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease, background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.hero button:hover {
+    box-shadow: 0 0 15px rgba(166, 0, 255, 0.6);
+}
+
+.hero button:active {
+    transform: scale(0.95);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section-title {
+    margin: 25px 0 15px;
+    color: #c58aff;
+}
+
+/* CARD */
+.card {
+    background: #19192b;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #383052;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #101020;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #a600ff;
+    box-shadow: 0 0 8px rgba(166, 0, 255, 0.5);
+}
+
+/* GAME SELECTOR GRID */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.game-card {
+    background: #25253b;
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.15s ease, background 0.3s, box-shadow 0.2s;
+    user-select: none;
+}
+
+.game-card:hover {
+    border-color: #a600ff;
+    transform: translateY(-2px);
+}
+
+.game-card:active {
+    transform: scale(0.94);
+    animation: pulseClick 0.3s ease;
+}
+
+.game-card.active {
+    background: #420080;
+    border-color: #bb66ff;
+    box-shadow: 0 0 12px rgba(187, 102, 255, 0.4);
+}
+
+.game-card h3 {
+    font-size: 15px;
+}
+
+/* ITEM GRID */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.item {
+    background: #25253b;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.15s ease, background 0.3s, box-shadow 0.2s;
+    user-select: none;
+}
+
+.item:hover {
+    border-color: #a600ff;
+    transform: translateY(-2px);
+}
+
+.item:active {
+    transform: scale(0.94);
+    animation: pulseClick 0.3s ease;
+}
+
+.item.active {
+    background: #420080;
+    border-color: #bb66ff;
+    box-shadow: 0 0 12px rgba(187, 102, 255, 0.4);
+}
+
+.item h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.item p {
+    color: #d5aaff;
+    font-weight: bold;
+}
+
+/* PAYMENT */
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.payment {
+    padding: 17px;
+    background: #25253b;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.15s ease, background 0.3s, box-shadow 0.2s;
+    user-select: none;
+}
+
+.payment:hover {
+    border-color: #a600ff;
+    transform: translateY(-2px);
+}
+
+.payment:active {
+    transform: scale(0.94);
+    animation: pulseClick 0.3s ease;
+}
+
+.payment.active {
+    background: #420080;
+    border-color: #bb66ff;
+    box-shadow: 0 0 12px rgba(187, 102, 255, 0.4);
+}
+
+/* ORDER */
+.total {
+    font-size: 23px;
+    color: #c58aff;
+    margin: 15px 0;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #7000ff, #b000ff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease, box-shadow 0.3s ease, opacity 0.2s;
+}
+
+.order-btn:hover {
+    box-shadow: 0 0 20px rgba(176, 0, 255, 0.6);
+}
+
+.order-btn:active {
+    transform: scale(0.97);
+}
+
+/* RIPPLE EFFECT */
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleAnimation 0.5s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.93);
+    }
+    100% {
+        transform: scale(0.97);
+    }
+}
+
+/* INFO */
+.info {
+    line-height: 1.9;
+    color: #ddd;
+}
+
+/* FOOTER */
+footer {
+    background: #171727;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+.wa-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #25d366;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+}
+
+.wa-btn:hover {
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+}
+
+.wa-btn:active {
+    transform: scale(0.93);
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 13px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="top">
-<div style="font-size:24px">☰</div>
-<div class="logo">💎 FRL<br><span>TOP UP</span></div>
-<div>🔍</div><div>🪙</div><div>🇮🇩</div>
-<button class="btn-daftar" onclick="waCS()">Daftar</button>
+
+<header>
+    <h1>💎 IBNU STORE</h1>
+    <p>Top Up Game Murah, Mudah & Praktis</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#topup">Top Up</a>
+    <a href="#cara">Cara Order</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>🔥 TOP UP GAME FAVORITMU 🔥</h2>
+    <p>
+        Selamat datang di IBNU STORE!
+        <br>
+        Pilih Game & Item favoritmu, lalu pesan langsung via WhatsApp.
+    </p>
+
+    <button onclick="location.href='#topup'">
+        TOP UP SEKARANG
+    </button>
+</section>
+
+<div class="container" id="topup">
+
+    <!-- STEP 1: PILIH GAME -->
+    <h2 class="section-title">1. Pilih Game</h2>
+    <div class="card">
+        <div class="game-grid">
+            <div class="game-card active" onclick="pilihGame(this, 'ff')">
+                <h3>🔥 Free Fire</h3>
+            </div>
+            <div class="game-card" onclick="pilihGame(this, 'ml')">
+                <h3>⚔️ Mobile Legends</h3>
+            </div>
+            <div class="game-card" onclick="pilihGame(this, 'pubg')">
+                <h3>🪂 PUBG Mobile</h3>
+            </div>
+            <div class="game-card" onclick="pilihGame(this, 'genshin')">
+                <h3>✨ Genshin Impact</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 2: INPUT ID PLAYER -->
+    <h2 class="section-title">2. Masukkan Data Akun</h2>
+    <div class="card">
+        <label id="labelID">ID Player</label>
+        <input
+            type="text"
+            id="playerID"
+            placeholder="Masukkan ID Player"
+            inputmode="numeric"
+            maxlength="15"
+        >
+        
+        <!-- Input tambahan khusus Mobile Legends (Zone ID) -->
+        <div id="zoneContainer" style="display: none;">
+            <label>Zone ID (MLBB)</label>
+            <input
+                type="text"
+                id="zoneID"
+                placeholder="Masukkan Server/Zone ID"
+                inputmode="numeric"
+                maxlength="8"
+            >
+        </div>
+    </div>
+
+    <!-- STEP 3: PILIH NOMINAL / ITEM -->
+    <h2 class="section-title">3. Pilih Nominal / Item</h2>
+    <div class="card">
+        <div class="item-grid" id="itemGrid">
+            <!-- Item game akan di-render secara dinamis via JavaScript -->
+        </div>
+    </div>
+
+    <!-- STEP 4: PILIH PEMBAYARAN -->
+    <h2 class="section-title">4. Pilih Pembayaran</h2>
+    <div class="card">
+        <div class="payment-grid">
+            <div class="payment" onclick="pilihPayment(this, 'DANA')">DANA</div>
+            <div class="payment" onclick="pilihPayment(this, 'OVO')">OVO</div>
+            <div class="payment" onclick="pilihPayment(this, 'GoPay')">GoPay</div>
+            <div class="payment" onclick="pilihPayment(this, 'QRIS')">QRIS</div>
+        </div>
+    </div>
+
+    <!-- STEP 5: KONFIRMASI -->
+    <h2 class="section-title">5. Konfirmasi Pesanan</h2>
+    <div class="card">
+        <p>Game: <span id="gameSelected">Free Fire</span></p>
+        <p style="margin-top:8px;">Produk: <span id="produk">Belum dipilih</span></p>
+        <p style="margin-top:8px;">Pembayaran: <span id="metode">Belum dipilih</span></p>
+
+        <h3 class="total">
+            Total: <span id="total">Rp0</span>
+        </h3>
+
+        <button class="order-btn" onclick="orderWhatsApp()">
+            🛒 BELI SEKARANG
+        </button>
+    </div>
+
+    <!-- CARA ORDER -->
+    <h2 class="section-title" id="cara">📋 Cara Order</h2>
+    <div class="card info">
+        <p>1. Pilih Game yang ingin di-top up.</p>
+        <p>2. Masukkan ID Player (dan Zone ID jika memilih MLBB).</p>
+        <p>3. Pilih jumlah Diamond / UC / Genesis Crystal.</p>
+        <p>4. Pilih metode pembayaran.</p>
+        <p>5. Klik tombol Beli Sekarang untuk diteruskan ke WhatsApp admin.</p>
+        <p>6. Lakukan pembayaran sesuai petunjuk admin.</p>
+    </div>
+
 </div>
 
-<div class="banner-scroll">
-<div class="banner" onclick="pilihGame('MLBB')"><i>MLBB</i><h2>TOP UP<br>MURAH<br>DI FRL!</h2><span>TOP UP SEKARANG ▶</span></div>
-<div class="banner banner2" onclick="pilihGame('FF')"><i>FREE FIRE</i><h2>TOP UP<br>FF MURAH<br>1 MENIT!</h2><span>TOP UP SEKARANG ▶</span></div>
-<div class="banner banner3" onclick="pilihGame('PUBG')"><i>PUBG</i><h2>TOP UP<br>UC MURAH<br>GARANSI!</h2><span>TOP UP SEKARANG ▶</span></div>
-</div>
-<div class="dots">◀ GESER KE KIRI ▶</div>
+<footer id="kontak">
+    <h2>💎 IBNU STORE</h2>
+    <p>Top Up Game Terpercaya</p>
+    <p>Admin WhatsApp: +62 896-8522-6271</p>
 
-<div class="sec"><h2>REKOMENDASI - GESER ▶</h2></div>
-<div class="games-scroll">
-<div class="game-item" onclick="pilihGame('MLBB')"><div class="game-box" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>⚔️</b><small>MLBB</small></div></div><p>Mobile Legends</p></div>
-<div class="game-item" onclick="pilihGame('FF')"><div class="game-box" style="background:linear-gradient(135deg,#f97316,#ea580c)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🔥</b><small>FREE FIRE</small></div></div><p>Free Fire</p></div>
-<div class="game-item" onclick="pilihGame('PUBG')"><div class="game-box" style="background:linear-gradient(135deg,#eab308,#a16207)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🎯</b><small>PUBG</small></div></div><p>PUBG Mobile</p></div>
-<div class="game-item" onclick="pilihGame('Valorant')"><div class="game-box" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>💥</b><small>VALORANT</small></div></div><p>Valorant</p></div>
-<div class="game-item" onclick="pilihGame('Genshin')"><div class="game-box" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>✨</b><small>GENSHIN</small></div></div><p>Genshin</p></div>
-<div class="game-item" onclick="pilihGame('Roblox')"><div class="game-box" style="background:linear-gradient(135deg,#333,#111)"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🧱</b><small>ROBLOX</small></div></div><p>Roblox</p></div>
-</div>
+    <a
+        class="wa-btn"
+        href="https://wa.me/6289685226271"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬 CHAT ADMIN
+    </a>
 
-<div class="sec"><h2>UNGGULAN</h2>
-<div class="grid3">
-<div onclick="pilihGame('MLBB')"><div class="game-box" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>⚔️</b><small>MLBB</small></div></div><p>Mobile Legends</p></div>
-<div onclick="pilihGame('FF')"><div class="game-box" style="background:linear-gradient(135deg,#f97316,#ea580c)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🔥</b><small>FREE FIRE</small></div></div><p>Free Fire</p></div>
-<div onclick="pilihGame('PUBG')"><div class="game-box" style="background:linear-gradient(135deg,#eab308,#a16207)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🎯</b><small>PUBG</small></div></div><p>PUBG Mobile</p></div>
-<div onclick="pilihGame('Valorant')"><div class="game-box" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>💥</b><small>VALORANT</small></div></div><p>Valorant</p></div>
-<div onclick="pilihGame('Genshin')"><div class="game-box" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>✨</b><small>GENSHIN</small></div></div><p>Genshin</p></div>
-<div onclick="pilihGame('Roblox')"><div class="game-box" style="background:linear-gradient(135deg,#333,#111)"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🧱</b><small>ROBLOX</small></div></div><p>Roblox</p></div>
-</div>
-</div>
-
-<div id="formTopup">
-<h3 id="judulGame">1. Top Up MLBB</h3>
-<div class="row"><input type="text" id="userId" placeholder="Masukkan User ID"><input type="text" id="serverId" placeholder="Server"><button class="btn-cek" onclick="cekID()">Cek</button></div>
-<p id="cekResult" style="font-size:13px;margin-top:8px;font-weight:700;color:#16a34a"></p>
-<h3 style="margin-top:16px">2. Pilih Nominal</h3>
-<div class="nom-wrap" id="nomWrap"></div>
-<h3 style="margin-top:16px">3. Pilih Pembayaran</h3>
-<div class="pay">
-<div class="pay-item" onclick="pilihPay(this,'DANA')"><div style="background:#118EEA;color:white;font-weight:800;padding:10px;border-radius:8px">DANA</div><p>DANA</p></div>
-<div class="pay-item" onclick="pilihPay(this,'OVO')"><div style="background:#4C2A85;color:white;font-weight:800;padding:10px;border-radius:8px">OVO</div><p>OVO</p></div>
-<div class="pay-item" onclick="pilihPay(this,'GoPay')"><div style="background:#00AA13;color:white;font-weight:800;padding:10px;border-radius:8px">GoPay</div><p>GoPay</p></div>
-<div class="pay-item" onclick="pilihPay(this,'ShopeePay')"><div style="background:#EE4D2D;color:white;font-weight:800;padding:10px;border-radius:8px">ShopeePay</div><p>ShopeePay</p></div>
-<div class="pay-item" onclick="pilihPay(this,'QRIS')"><div style="background:#111;color:white;font-weight:800;padding:10px;border-radius:8px">QRIS</div><p>QRIS</p></div>
-<div class="pay-item" onclick="pilihPay(this,'Bank')"><div style="background:#64748b;color:white;font-weight:800;padding:10px;border-radius:8px">BANK</div><p>Bank</p></div>
-</div>
-<div id="qrisBox" style="display:none;text-align:center;margin-top:12px;border:1px dashed #999;padding:12px;border-radius:12px"><b>Scan QRIS Ini</b><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FRLTOPUP" style="width:160px;height:160px"><p style="font-size:12px">FRL TOP UP</p></div>
-</div>
-
-<a class="wa" href="#" onclick="waCS();return false;">💬</a>
-<div class="sticky"><div><small>Total Bayar</small><br><b id="totalTxt">Rp 0</b><br><small id="totalNote">Pilih game dulu</small></div><button class="btn-beli" onclick="beli()">BELI SEKARANG</button></div>
+    <p style="margin-top:20px;">
+        ©️ 2026 IBNU STORE
+    </p>
+</footer>
 
 <script>
-var WA_NUMBER = "6289519286925";
-var gameNow=""; var nomNow=""; var hargaNow=""; var payNow="";
-var nominals={"MLBB":[["86 DM","Rp 20.000"],["172 DM","Rp 39.500"],["257 DM","Rp 59.000"],["706 DM","Rp 160.000"]],"FF":[["70 DM","Rp 10.000"],["140 DM","Rp 20.000"],["355 DM","Rp 50.000"],["720 DM","Rp 100.000"]],"PUBG":[["60 UC","Rp 15.000"],["325 UC","Rp 75.000"],["660 UC","Rp 150.000"]],"Valorant":[["475 VP","Rp 50.000"],["1000 VP","Rp 100.000"]],"Genshin":[["60 Genesis","Rp 16.000"],["300+30 Genesis","Rp 79.000"]],"Roblox":[["80 Robux","Rp 15.000"],["400 Robux","Rp 70.000"]]};
-function waCS(){window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent("Halo FRL! Mau tanya top up"),"_blank");}
-function pilihGame(nama){
-  gameNow=nama; nomNow=""; hargaNow=""; payNow="";
-  document.getElementById("formTopup").style.display="block";
-  document.getElementById("judulGame").innerText="1. Top Up "+nama+" - Masukkan User ID";
-  document.getElementById("cekResult").innerText="";
-  var list=nominals[nama]||nominals["MLBB"];
-  var html="";
-  for(var i=0;i<list.length;i++){html+='<div class="nom" onclick="pilihNom(this,\''+list[i][0]+'\',\''+list[i][1]+'\')"><b>'+list[i][0]+'</b><span>'+list[i][1]+'</span></div>';}
-  document.getElementById("nomWrap").innerHTML=html;
-  document.getElementById("formTopup").scrollIntoView({behavior:"smooth"});
-  document.getElementById("serverId").style.display=(nama=="FF")?"none":"block";
-  setTimeout(function(){
-    var first=document.querySelector(".nom");
-    if(first){first.click();}
-    var dana=document.querySelectorAll(".pay-item")[0];
-    if(dana){dana.click();}
-  },100);
+const nomorWA = "6289685226271";
+
+/* DATABASE PRODUK PER GAME */
+const gameData = {
+    ff: {
+        nama: "Free Fire",
+        items: [
+            { nama: "5 Diamond", harga: 1000 },
+            { nama: "12 Diamond", harga: 2500 },
+            { nama: "50 Diamond", harga: 8000 },
+            { nama: "70 Diamond", harga: 10000 },
+            { nama: "140 Diamond", harga: 20000 },
+            { nama: "355 Diamond", harga: 48000 },
+            { nama: "720 Diamond", harga: 95000 },
+            { nama: "1450 Diamond", harga: 190000 }
+        ]
+    },
+    ml: {
+        nama: "Mobile Legends",
+        items: [
+            { nama: "5 Diamond", harga: 1500 },
+            { nama: "12 Diamond", harga: 3500 },
+            { nama: "53 Diamond", harga: 14000 },
+            { nama: "77 Diamond", harga: 20000 },
+            { nama: "154 Diamond", harga: 40000 },
+            { nama: "217 Diamond", harga: 56000 },
+            { nama: "366 Diamond", harga: 95000 },
+            { nama: "758 Diamond", harga: 195000 }
+        ]
+    },
+    pubg: {
+        nama: "PUBG Mobile",
+        items: [
+            { nama: "35 UC", harga: 7000 },
+            { nama: "53 UC", harga: 10000 },
+            { nama: "77 UC", harga: 14500 },
+            { nama: "154 UC", harga: 29000 },
+            { nama: "217 UC", harga: 42000 },
+            { nama: "366 UC", harga: 69000 },
+            { nama: "758 UC", harga: 140000 }
+        ]
+    },
+    genshin: {
+        nama: "Genshin Impact",
+        items: [
+            { nama: "60 Genesis Crystals", harga: 14000 },
+            { nama: "300+30 Genesis Crystals", harga: 68000 },
+            { nama: "980+110 Genesis Crystals", harga: 210000 },
+            { nama: "1980+260 Genesis Crystals", harga: 430000 },
+            { nama: "Blessing of the Welkin Moon", harga: 68000 }
+        ]
+    }
+};
+
+/* STATE PESANAN */
+let selectedGameKey = "ff";
+let itemDipilih = "";
+let hargaDipilih = 0;
+let pembayaranDipilih = "";
+
+/* FORMAT RUPIAH */
+function formatRupiah(angka) {
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        minimumFractionDigits: 0
+    }).format(angka);
 }
-function pilihNom(el,nama,harga){
-  var all=document.querySelectorAll(".nom");
-  for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
-  el.classList.add("active");
-  nomNow=nama; hargaNow=harga;
-  document.getElementById("totalTxt").innerText=harga;
-  document.getElementById("totalNote").innerText=gameNow+" - "+nama;
+
+/* EFEK RIPPLE SAAT DIKLIK */
+function createRipple(e) {
+    const element = e.currentTarget;
+    const circle = document.createElement("span");
+    const diameter = Math.max(element.clientWidth, element.clientHeight);
+    const radius = diameter / 2;
+
+    const rect = element.getBoundingClientRect();
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${e.clientX - rect.left - radius}px`;
+    circle.style.top = `${e.clientY - rect.top - radius}px`;
+    circle.classList.add("ripple");
+
+    const existingRipple = element.getElementsByClassName("ripple")[0];
+    if (existingRipple) {
+        existingRipple.remove();
+    }
+
+    element.appendChild(circle);
 }
-function pilihPay(el,nama){
-  var all=document.querySelectorAll(".pay-item");
-  for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
-  el.classList.add("active");
-  payNow=nama;
-  var q=document.getElementById("qrisBox");
-  if(q){q.style.display=(nama=="QRIS")?"block":"none";}
+
+// Pasang efek ripple ke tombol statis
+document.addEventListener("DOMContentLoaded", () => {
+    const clickableElements = document.querySelectorAll(".game-card, .payment, .order-btn, .hero button, .wa-btn");
+    clickableElements.forEach(el => {
+        el.addEventListener("click", createRipple);
+    });
+});
+
+/* RENDER ITEM GAME */
+function renderItems(gameKey) {
+    const itemGrid = document.getElementById("itemGrid");
+    itemGrid.innerHTML = "";
+    
+    // Reset pilihan produk & total
+    itemDipilih = "";
+    hargaDipilih = 0;
+    document.getElementById("produk").textContent = "Belum dipilih";
+    document.getElementById("total").textContent = "Rp0";
+
+    gameData[gameKey].items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "item";
+        div.onclick = function(e) { pilihItem(this, item.nama, item.harga); };
+        div.addEventListener("click", createRipple);
+        div.innerHTML = `
+            <h3>${item.nama}</h3>
+            <p>${formatRupiah(item.harga)}</p>
+        `;
+        itemGrid.appendChild(div);
+    });
 }
-function cekID(){
-  var id=document.getElementById("userId").value;
-  if(!id){alert("Isi ID dulu!");return;}
-  document.getElementById("cekResult").innerText="✅ Akun ditemukan: Player_"+id.slice(-4)+" ("+gameNow+")";
+
+/* GANTI GAME */
+function pilihGame(element, gameKey) {
+    document.querySelectorAll(".game-card").forEach(card => {
+        card.classList.remove("active");
+    });
+    element.classList.add("active");
+
+    selectedGameKey = gameKey;
+    document.getElementById("gameSelected").textContent = gameData[gameKey].nama;
+
+    // Tampilkan field Zone ID khusus Mobile Legends
+    const zoneContainer = document.getElementById("zoneContainer");
+    if (gameKey === "ml") {
+        zoneContainer.style.display = "block";
+    } else {
+        zoneContainer.style.display = "none";
+    }
+
+    renderItems(gameKey);
 }
-function beli(){
-  var id=document.getElementById("userId").value;
-  if(!gameNow){alert("Pilih game dulu!");return;}
-  if(!id){alert("Isi ID dulu!");return;}
-  if(!nomNow){alert("Pilih nominal dulu!");return;}
-  if(!payNow){alert("Pilih pembayaran dulu!");return;}
-  var msg="Halo FRL! Mau top up "+gameNow+" - "+nomNow+" - "+hargaNow+" ID:"+id+" Bayar via "+payNow;
-  window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
+
+/* PILIH ITEM/NOMINAL */
+function pilihItem(element, nama, harga) {
+    document.querySelectorAll(".item").forEach(i => {
+        i.classList.remove("active");
+    });
+    element.classList.add("active");
+
+    itemDipilih = nama;
+    hargaDipilih = harga;
+
+    document.getElementById("produk").textContent = nama;
+    document.getElementById("total").textContent = formatRupiah(harga);
 }
+
+/* PILIH METODE PEMBAYARAN */
+function pilihPayment(element, metode) {
+    document.querySelectorAll(".payment").forEach(p => {
+        p.classList.remove("active");
+    });
+    element.classList.add("active");
+
+    pembayaranDipilih = metode;
+    document.getElementById("metode").textContent = metode;
+}
+
+/* PROSES KE WHATSAPP */
+function orderWhatsApp() {
+    const playerID = document.getElementById("playerID").value.trim();
+    const zoneID = document.getElementById("zoneID").value.trim();
+
+    /* VALIDASI INPUT */
+    if (playerID === "") {
+        alert("Silakan masukkan ID Player terlebih dahulu!");
+        return;
+    }
+
+    if (selectedGameKey === "ml" && zoneID === "") {
+        alert("Silakan masukkan Zone ID Mobile Legends!");
+        return;
+    }
+
+    if (itemDipilih === "") {
+        alert("Silakan pilih produk/nominal yang ingin dibeli!");
+        return;
+    }
+
+    if (pembayaranDipilih === "") {
+        alert("Silakan pilih metode pembayaran!");
+        return;
+    }
+
+    const namaGame = gameData[selectedGameKey].nama;
+    const infoID = (selectedGameKey === "ml") ? `${playerID} (${zoneID})` : playerID;
+
+    /* FORMAT PESAN WHATSAPP */
+    const pesan =
+`Halo Admin IBNU STORE 👋
+
+Saya ingin melakukan top up game.
+
+━━━━━━━━━━━━━━━━
+💎 DETAIL PESANAN
+━━━━━━━━━━━━━━━━
+
+🎮 Game: ${namaGame}
+🆔 ID Player: ${infoID}
+💎 Produk: ${itemDipilih}
+💰 Harga: ${formatRupiah(hargaDipilih)}
+💳 Pembayaran: ${pembayaranDipilih}
+
+━━━━━━━━━━━━━━━━
+
+Mohon konfirmasi pesanan dan instruksi pembayarannya.
+
+Terima kasih!`;
+
+    const pesanEncoded = encodeURIComponent(pesan);
+    const linkWA = "https://wa.me/" + nomorWA + "?text=" + pesanEncoded;
+
+    window.location.href = linkWA;
+}
+
+// Inisialisasi item awal (Free Fire)
+renderItems("ff");
 </script>
+
 </body>
 </html>
