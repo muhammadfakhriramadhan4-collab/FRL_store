@@ -3,109 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FRL TOP UP</title>
+<title>FRL TOP UP - Mirip Codashop</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;-webkit-tap-highlight-color:transparent}
-body{background:#2a0a4a;color:white;padding-bottom:120px}
-.top{background:#2a0a4a;display:flex;align-items:center;gap:10px;padding:12px 14px;position:sticky;top:0;z-index:20}
-.logo{font-weight:900;font-size:18px;flex:1;line-height:1.1}
-.logo span{color:#f97316}
-.btn-daftar{background:#6d28d9;color:white;border:0;padding:8px 16px;border-radius:20px;font-weight:700}
-.banner-scroll{display:flex;gap:10px;overflow-x:auto;padding:0 14px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:#2D0A3E;color:white;padding-bottom:110px}
+a{color:inherit;text-decoration:none}
+
+/* HEADER PERSIS CODASHOP */
+.header{background:#2D0A3E;display:flex;align-items:center;gap:12px;padding:12px 14px;position:sticky;top:0;z-index:50}
+.hamburger{font-size:26px;line-height:1}
+.logo{display:flex;align-items:center;gap:6px;font-weight:900;font-size:17px;letter-spacing:.5px;flex:1}
+.logo i{font-size:22px;font-style:normal}
+.logo span{color:white}
+.header-icons{display:flex;align-items:center;gap:12px;font-size:20px}
+.btn-daftar{background:#5B5BF6;color:white;border:0;padding:9px 18px;border-radius:999px;font-weight:700;font-size:14px}
+.flag{font-size:18px}
+
+/* BANNER PERSIS CODASHOP - FULL WIDTH */
+.banner-wrap{position:relative;overflow:hidden}
+.banner-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 .banner-scroll::-webkit-scrollbar{display:none}
-.banner{min-width:92%;scroll-snap-align:center;border-radius:14px;padding:20px;background:linear-gradient(135deg,#7c3aed,#db2777,#f97316);min-height:170px;flex-shrink:0;cursor:pointer}
-.banner2{background:linear-gradient(135deg,#f97316,#eab308,#16a34a)}
-.banner3{background:linear-gradient(135deg,#0ea5e9,#2563eb,#7c3aed)}
-.banner h2{font-size:26px;line-height:1.1;margin-top:8px}
-.banner span{background:#facc15;color:black;font-size:11px;font-weight:800;padding:5px 10px;border-radius:10px;display:inline-block;margin-top:10px}
-.dots{text-align:center;padding:8px;font-size:12px;color:#c4b5fd}
-.games-scroll{display:flex;gap:12px;overflow-x:auto;padding:10px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.banner{min-width:100%;height:180px;scroll-snap-align:center;position:relative;display:flex;align-items:center;overflow:hidden;cursor:pointer;flex-shrink:0}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,0,30,.9) 0%,rgba(20,0,30,.6) 45%,transparent 80%)}
+.banner-text{position:relative;z-index:2;padding:0 18px;max-width:62%}
+.banner-text small{font-style:italic;font-weight:800;opacity:.9}
+.banner-text h2{font-size:26px;line-height:.95;font-weight:900;letter-spacing:-.5px;margin:8px 0;color:#FF6B9D}
+.banner-text h2 span{color:white}
+.banner-text .cta{background:#FFE500;color:#111;font-size:10px;font-weight:900;padding:5px 9px;border-radius:999px;display:inline-block}
+.dots{display:flex;justify-content:center;gap:7px;padding:12px 0 4px}
+.dot{width:9px;height:9px;border-radius:50%;background:#7A5A90}
+.dot.active{background:white;width:11px;height:11px}
+
+/* REKOMENDASI PERSIS CODASHOP */
+.sec{padding:10px 14px 0}
+.sec h2{font-size:32px;font-weight:900;letter-spacing:1px;line-height:1;margin:6px 0 12px}
+.games-scroll{display:flex;gap:12px;overflow-x:auto;padding:0 14px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .games-scroll::-webkit-scrollbar{display:none}
-.game-item{min-width:110px;scroll-snap-align:start;cursor:pointer;text-align:center;flex-shrink:0}
-.game-box{width:110px;height:120px;border-radius:12px;overflow:hidden;position:relative;background:#444}
-.game-box img{width:100%;height:100%;object-fit:cover;display:block}
-.game-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
-.game-fallback b{font-size:28px}
-.game-fallback small{font-size:11px;font-weight:800;margin-top:4px}
-.game-item p{font-size:13px;font-weight:700;margin-top:6px;line-height:1.2}
-.sec{padding:6px 14px}
-.sec h2{font-size:24px;font-weight:900;margin:10px 0}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.grid3 .game-box{width:100%}
-.grid3 p{font-size:13px;font-weight:700;text-align:center;margin-top:6px}
-#formTopup{display:none;background:white;color:#111;border-radius:16px;margin:14px;padding:16px;padding-bottom:20px}
-.row{display:flex;gap:8px;flex-wrap:nowrap}
-.row input{flex:1;padding:12px;border:1.5px solid #ddd;border-radius:10px;font-size:14px;min-width:0;width:1%}
-.btn-cek{background:#2a0a4a;color:white;border:0;padding:12px 16px;border-radius:10px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.game-card{min-width:148px;width:148px;scroll-snap-align:start;cursor:pointer;flex-shrink:0;background:#3A124E;border-radius:12px;overflow:hidden}
+.game-card .thumb{width:100%;height:150px;position:relative;background:#222;overflow:hidden}
+.game-card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.game-card .thumb .fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:44px}
+.game-card p{font-size:14px;font-weight:600;text-align:center;padding:12px 8px 14px;line-height:1.2}
+
+/* UNGGULAN - GRID 3 PERSIS CODASHOP */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 14px}
+.grid3 .game-card{min-width:0;width:100%}
+.grid3 .game-card .thumb{height:112px}
+.grid3 .game-card p{font-size:12px;padding:10px 4px}
+
+/* FORM TOPUP */
+#formTopup{display:none;background:white;color:#111;border-radius:16px;margin:16px 14px;padding:18px}
+#formTopup h3{font-size:16px;margin-bottom:10px}
+.input-col{display:flex;flex-direction:column;gap:8px}
+.input-col input{padding:13px;border:1.5px solid #E5E7EB;border-radius:10px;font-size:14px;width:100%;outline:none}
+.input-col input:focus{border-color:#7C3AED}
+.input-row{display:flex;gap:8px}
+.input-row input{flex:1;min-width:0}
+.btn-cek{background:#2D0A3E;color:white;border:0;padding:13px 18px;border-radius:10px;font-weight:700;flex-shrink:0}
 .nom-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-.nom{border:2px solid #ddd;border-radius:12px;padding:12px;cursor:pointer;text-align:center;background:#fff}
-.nom.active{border-color:#6d28d9;background:#ede9fe}
-.nom b{color:#6d28d9;display:block} .nom span{color:#f97316;font-weight:700;font-size:13px}
+.nom{border:2px solid #E5E7EB;border-radius:12px;padding:13px;cursor:pointer;text-align:center;background:#fff}
+.nom.active{border-color:#7C3AED;background:#EDE9FE}
+.nom b{color:#7C3AED;display:block;font-size:14px} .nom span{color:#F97316;font-weight:700;font-size:13px}
 .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.pay-item{border:2px solid #ddd;border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;background:white}
-.pay-item.active{border-color:#6d28d9;background:#ede9fe}
+.pay-item{border:2px solid #E5E7EB;border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;background:white}
+.pay-item.active{border-color:#7C3AED;background:#EDE9FE}
 .pay-item p{font-size:12px;font-weight:700;margin-top:4px}
-.sticky{position:fixed;bottom:0;left:0;right:0;background:white;color:#111;display:flex;align-items:center;gap:12px;padding:12px 14px;z-index:30;box-shadow:0 -2px 10px rgba(0,0,0,0.2)}
-.btn-beli{flex:1;background:#f97316;color:white;border:0;padding:14px;border-radius:12px;font-weight:800;font-size:15px}
-/* WA PINDAH KE KIRI BIAR GAK NUTUPIN TOMBOL CEK LAGI */
-.wa{position:fixed;left:14px;bottom:95px;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;z-index:40;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:white;color:#111;display:flex;align-items:center;gap:12px;padding:12px 14px;z-index:30;box-shadow:0 -2px 12px rgba(0,0,0,.25)}
+.btn-beli{flex:1;background:#FF6A00;color:white;border:0;padding:14px;border-radius:12px;font-weight:800;font-size:15px}
+.footer{padding:20px 14px;text-align:center;font-size:12px;color:#B8A5C8;line-height:1.6}
 </style>
 </head>
 <body>
-<div class="top">
-<div style="font-size:24px">☰</div>
-<div class="logo">💎 FRL<br><span>TOP UP</span></div>
-<div>🔍</div><div>🪙</div><div>🇮🇩</div>
+
+<!-- HEADER -->
+<div class="header">
+<div class="hamburger">☰</div>
+<div class="logo"><i>💎</i><span>FRL SHOP</span></div>
+<div class="header-icons"><span>🔍</span><span>🪙</span><span class="flag">🇮🇩 ID</span></div>
 <button class="btn-daftar" onclick="waCS()">Daftar</button>
 </div>
 
-<div class="banner-scroll">
-<div class="banner" onclick="pilihGame('MLBB')"><i>MLBB</i><h2>TOP UP<br>MURAH<br>DI FRL!</h2><span>TOP UP SEKARANG ▶</span></div>
-<div class="banner banner2" onclick="pilihGame('FF')"><i>FREE FIRE</i><h2>TOP UP<br>FF MURAH<br>1 MENIT!</h2><span>TOP UP SEKARANG ▶</span></div>
-<div class="banner banner3" onclick="pilihGame('PUBG')"><i>PUBG</i><h2>TOP UP<br>UC MURAH<br>GARANSI!</h2><span>TOP UP SEKARANG ▶</span></div>
+<!-- BANNER -->
+<div class="banner-wrap">
+<div class="banner-scroll" id="bannerScroll">
+<div class="banner" onclick="pilihGame('MLBB')">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" onerror="this.style.display='none'">
+<div class="banner-overlay"></div>
+<div class="banner-text"><small>FRL TOP UP</small><h2>MLBB<br><span>KINI ADA<br>DI FRL!</span></h2><span class="cta">TOP UP SEKARANG</span></div>
 </div>
-<div class="dots">◀ GESER KE KIRI ▶</div>
+<div class="banner" onclick="pilihGame('FF')">
+<img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80" onerror="this.style.display='none'">
+<div class="banner-overlay" style="background:linear-gradient(90deg,rgba(50,10,0,.9),rgba(50,10,0,.4) 50%,transparent)"></div>
+<div class="banner-text"><small>FREE FIRE</small><h2 style="color:#FFB800">TOP UP FF<br><span>MURAH<br>1 MENIT!</span></h2><span class="cta">TOP UP SEKARANG</span></div>
+</div>
+<div class="banner" onclick="pilihGame('PUBG')">
+<img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=800&q=80" onerror="this.style.display='none'">
+<div class="banner-overlay" style="background:linear-gradient(90deg,rgba(0,20,50,.9),rgba(0,20,50,.4) 50%,transparent)"></div>
+<div class="banner-text"><small>PUBG MOBILE</small><h2 style="color:#38BDF8">TOP UP UC<br><span>MURAH<br>GARANSI!</span></h2><span class="cta">TOP UP SEKARANG</span></div>
+</div>
+</div>
+</div>
+<div class="dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
 
-<div class="sec"><h2>REKOMENDASI - GESER ▶</h2></div>
+<!-- REKOMENDASI -->
+<div class="sec"><h2>REKOMENDASI</h2></div>
 <div class="games-scroll">
-<div class="game-item" onclick="pilihGame('MLBB')"><div class="game-box" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>⚔️</b><small>MLBB</small></div></div><p>Mobile Legends</p></div>
-<div class="game-item" onclick="pilihGame('FF')"><div class="game-box" style="background:linear-gradient(135deg,#f97316,#ea580c)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🔥</b><small>FREE FIRE</small></div></div><p>Free Fire</p></div>
-<div class="game-item" onclick="pilihGame('PUBG')"><div class="game-box" style="background:linear-gradient(135deg,#eab308,#a16207)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🎯</b><small>PUBG</small></div></div><p>PUBG Mobile</p></div>
-<div class="game-item" onclick="pilihGame('Valorant')"><div class="game-box" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>💥</b><small>VALORANT</small></div></div><p>Valorant</p></div>
-<div class="game-item" onclick="pilihGame('Genshin')"><div class="game-box" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>✨</b><small>GENSHIN</small></div></div><p>Genshin</p></div>
-<div class="game-item" onclick="pilihGame('Roblox')"><div class="game-box" style="background:linear-gradient(135deg,#333,#111)"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🧱</b><small>ROBLOX</small></div></div><p>Roblox</p></div>
+<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb" style="background:linear-gradient(135deg,#7C3AED,#2D0A3E)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">⚔️</div></div><p>Mobile<br>Legends:<br>Bang Bang</p></div>
+<div class="game-card" onclick="pilihGame('FF')"><div class="thumb" style="background:linear-gradient(135deg,#F97316,#7C2D12)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🔥</div></div><p>Free Fire</p></div>
+<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb" style="background:linear-gradient(135deg,#EAB308,#713F12)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🎯</div></div><p>PUBG<br>Mobile</p></div>
+<div class="game-card" onclick="pilihGame('Valorant')"><div class="thumb" style="background:linear-gradient(135deg,#EF4444,#7F1D1D)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">💥</div></div><p>Valorant</p></div>
+<div class="game-card" onclick="pilihGame('Genshin')"><div class="thumb" style="background:linear-gradient(135deg,#38BDF8,#0C4A6E)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">✨</div></div><p>Genshin<br>Impact</p></div>
+<div class="game-card" onclick="pilihGame('Roblox')"><div class="thumb" style="background:#1F2937"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🧱</div></div><p>Roblox</p></div>
 </div>
 
-<div class="sec"><h2>UNGGULAN</h2>
+<!-- UNGGULAN -->
+<div class="sec"><h2>UNGGULAN</h2></div>
 <div class="grid3">
-<div onclick="pilihGame('MLBB')"><div class="game-box" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>⚔️</b><small>MLBB</small></div></div><p>Mobile Legends</p></div>
-<div onclick="pilihGame('FF')"><div class="game-box" style="background:linear-gradient(135deg,#f97316,#ea580c)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🔥</b><small>FREE FIRE</small></div></div><p>Free Fire</p></div>
-<div onclick="pilihGame('PUBG')"><div class="game-box" style="background:linear-gradient(135deg,#eab308,#a16207)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🎯</b><small>PUBG</small></div></div><p>PUBG Mobile</p></div>
-<div onclick="pilihGame('Valorant')"><div class="game-box" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>💥</b><small>VALORANT</small></div></div><p>Valorant</p></div>
-<div onclick="pilihGame('Genshin')"><div class="game-box" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>✨</b><small>GENSHIN</small></div></div><p>Genshin</p></div>
-<div onclick="pilihGame('Roblox')"><div class="game-box" style="background:linear-gradient(135deg,#333,#111)"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="game-fallback"><b>🧱</b><small>ROBLOX</small></div></div><p>Roblox</p></div>
-</div>
+<div class="game-card" onclick="pilihGame('MLBB')"><div class="thumb" style="background:linear-gradient(135deg,#7C3AED,#2D0A3E)"><img src="mlbb.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">⚔️</div></div><p>Mobile Legends</p></div>
+<div class="game-card" onclick="pilihGame('FF')"><div class="thumb" style="background:linear-gradient(135deg,#F97316,#7C2D12)"><img src="ff.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🔥</div></div><p>Free Fire</p></div>
+<div class="game-card" onclick="pilihGame('PUBG')"><div class="thumb" style="background:linear-gradient(135deg,#EAB308,#713F12)"><img src="pubg.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🎯</div></div><p>PUBG Mobile</p></div>
+<div class="game-card" onclick="pilihGame('Valorant')"><div class="thumb" style="background:linear-gradient(135deg,#EF4444,#7F1D1D)"><img src="valorant.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">💥</div></div><p>Valorant</p></div>
+<div class="game-card" onclick="pilihGame('Genshin')"><div class="thumb" style="background:linear-gradient(135deg,#38BDF8,#0C4A6E)"><img src="genshin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">✨</div></div><p>Genshin Impact</p></div>
+<div class="game-card" onclick="pilihGame('Roblox')"><div class="thumb" style="background:#1F2937"><img src="roblox.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb">🧱</div></div><p>Roblox</p></div>
 </div>
 
+<!-- FORM -->
 <div id="formTopup">
 <h3 id="judulGame">1. Top Up MLBB</h3>
-<div class="row"><input type="text" id="userId" placeholder="Masukkan User ID"><input type="text" id="serverId" placeholder="Server"><button class="btn-cek" onclick="cekID()">Cek</button></div>
-<p id="cekResult" style="font-size:13px;margin-top:8px;font-weight:700;color:#16a34a"></p>
-<h3 style="margin-top:16px">2. Pilih Nominal</h3>
+<div class="input-col">
+<input type="text" id="userId" placeholder="Masukkan User ID">
+<div class="input-row"><input type="text" id="serverId" placeholder="Server"><button class="btn-cek" onclick="cekID()">Cek ID</button></div>
+</div>
+<p id="cekResult" style="font-size:13px;margin-top:8px;font-weight:700;color:#16A34A"></p>
+<h3 style="margin-top:18px">2. Pilih Nominal</h3>
 <div class="nom-wrap" id="nomWrap"></div>
-<h3 style="margin-top:16px">3. Pilih Pembayaran</h3>
+<h3 style="margin-top:18px">3. Pilih Pembayaran</h3>
 <div class="pay">
 <div class="pay-item" onclick="pilihPay(this,'DANA')"><div style="background:#118EEA;color:white;font-weight:800;padding:10px;border-radius:8px">DANA</div><p>DANA</p></div>
 <div class="pay-item" onclick="pilihPay(this,'OVO')"><div style="background:#4C2A85;color:white;font-weight:800;padding:10px;border-radius:8px">OVO</div><p>OVO</p></div>
 <div class="pay-item" onclick="pilihPay(this,'GoPay')"><div style="background:#00AA13;color:white;font-weight:800;padding:10px;border-radius:8px">GoPay</div><p>GoPay</p></div>
 <div class="pay-item" onclick="pilihPay(this,'ShopeePay')"><div style="background:#EE4D2D;color:white;font-weight:800;padding:10px;border-radius:8px">ShopeePay</div><p>ShopeePay</p></div>
 <div class="pay-item" onclick="pilihPay(this,'QRIS')"><div style="background:#111;color:white;font-weight:800;padding:10px;border-radius:8px">QRIS</div><p>QRIS</p></div>
-<div class="pay-item" onclick="pilihPay(this,'Bank')"><div style="background:#64748b;color:white;font-weight:800;padding:10px;border-radius:8px">BANK</div><p>Bank</p></div>
+<div class="pay-item" onclick="pilihPay(this,'Bank')"><div style="background:#64748B;color:white;font-weight:800;padding:10px;border-radius:8px">BANK</div><p>Bank</p></div>
 </div>
 <div id="qrisBox" style="display:none;text-align:center;margin-top:12px;border:1px dashed #999;padding:12px;border-radius:12px"><b>Scan QRIS Ini</b><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FRLTOPUP" style="width:160px;height:160px"><p style="font-size:12px">FRL TOP UP - 089519286925</p></div>
+<button onclick="waCS()" style="width:100%;margin-top:14px;background:#25D366;color:white;border:0;padding:12px;border-radius:12px;font-weight:800">💬 Chat Admin WA - 089519286925</button>
 </div>
 
-<a class="wa" href="#" onclick="waCS();return false;">💬</a>
+<div class="footer">FRL TOP UP - Top Up Game Murah, Cepat & Aman<br>WA: 089519286925 | Proses 1 Menit</div>
+
 <div class="sticky"><div><small>Total Bayar</small><br><b id="totalTxt">Rp 0</b><br><small id="totalNote">Pilih game dulu</small></div><button class="btn-beli" onclick="beli()">BELI SEKARANG</button></div>
 
 <script>
@@ -161,6 +208,15 @@ function beli(){
   var msg="Halo FRL! Mau top up "+gameNow+" - "+nomNow+" - "+hargaNow+" ID:"+id+" Bayar via "+payNow;
   window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
 }
+// Auto geser banner + dots
+var bannerEl=document.getElementById("bannerScroll");
+var bannerIdx=0;
+setInterval(function(){
+  bannerIdx=(bannerIdx+1)%3;
+  bannerEl.scrollTo({left:bannerEl.clientWidth*bannerIdx,behavior:"smooth"});
+  var dots=document.querySelectorAll(".dot");
+  for(var i=0;i<dots.length;i++){dots[i].classList.toggle("active",i==bannerIdx);}
+},4000);
 </script>
 </body>
 </html>
