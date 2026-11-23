@@ -1,161 +1,130 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FRL TOP UP - FIX PENCET</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:#f5f6f8;color:#111;padding-bottom:20px}.top{height:60px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.06)}.logo{font-weight:900}.logo span{color:#ff6b00}.banner{margin:12px;background:linear-gradient(135deg,#101c3d,#1e3a8a);border-radius:14px;padding:16px;color:#fff;display:flex;justify-content:space-between}.pill-wrap{display:flex;gap:8px;overflow:auto;padding:12px}.pill{padding:10px 16px;border-radius:100px;background:#fff;border:2px solid #e5e7eb;font-weight:800;font-size:12px;white-space:nowrap;flex-shrink:0}.pill.active{background:#111;color:#fff;border-color:#111}.box{margin:12px;background:#fff;border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}.box h3{font-size:14px;font-weight:900;margin-bottom:10px}.row{display:flex;gap:8px}.inp{flex:1;padding:13px;border-radius:10px;border:2px solid #e5e7eb;outline:none;font-size:13px}.inp:focus{border-color:#ff6b00}.btn{padding:13px 18px;border-radius:10px;border:none;background:#111;color:#fff;font-weight:800}.grid{margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.denom{border:2px solid #e5e7eb;border-radius:12px;padding:12px;display:flex;justify-content:space-between;align-items:center;background:#fff}.denom.active{border-color:#ff6b00;background:#fff7ed}.paygrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}.pay{border:2px solid #e5e7eb;border-radius:12px;padding:12px;text-align:center;background:#fff;font-weight:800;font-size:12px}.pay.active{border-color:#ff6b00;background:#fff7ed}.total{margin-top:12px;background:#111;color:#fff;padding:14px;border-radius:12px;display:flex;justify-content:space-between;font-weight:900}.btn-buy{width:100%;margin-top:12px;padding:16px;border:none;border-radius:12px;background:#ff6b00;color:#fff;font-weight:900;font-size:15px}.btn-buy:disabled{background:#ddd;color:#888}.nick{display:none;margin-top:10px;background:#e8ffe8;border:1px solid #a0e0a0;padding:10px;border-radius:8px;font-size:12px}#conf{position:fixed;inset:0;pointer-events:none;z-index:9999;display:none}</style></head><body>
-<canvas id="conf"></canvas>
-<div class="top"><div class="logo">💎 FRL <span>TOP UP</span></div><div style="background:#ff6b00;color:#fff;padding:6px 12px;border-radius:100px;font-size:11px;font-weight:900">FIX PENCET</div></div>
-<div class="banner"><div><b style="color:#f0c75e">Top Up Murah</b><br>Proses Detik ⚡<br><small style="color:#a8b3d8;font-size:11px">Garansi • 24 Jam</small></div><div style="font-size:30px">💎</div></div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRL TOP UP - Top Up Game Murah & Cepat</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+body{background:#0f172a;color:#1e293b;padding-bottom:110px}
+.header{background:#fff;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.header b{font-size:19px} .header b span{color:#f97316}
+.btn-cs{background:#22c55e;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:700;font-size:12px}
+.hero{margin:12px 15px;background:linear-gradient(135deg,#1e3a8a,#0ea5e9);border-radius:16px;padding:18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.hero h2{font-size:20px;line-height:1.2} .hero p{font-size:12px;opacity:.9;margin-top:4px}
+.hero .diamond{font-size:48px}
+.info-bar{display:flex;gap:8px;margin:0 15px}
+.info-bar div{flex:1;background:#fff;border-radius:10px;padding:8px;text-align:center;font-size:11px;font-weight:600}
+.game-tabs{display:flex;gap:8px;padding:12px 15px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.game-tabs::-webkit-scrollbar{display:none}
+.game-tab{flex-shrink:0;background:#fff;border:1px solid #e2e8f0;padding:9px 14px;border-radius:25px;font-weight:700;font-size:13px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.game-tab.active{background:#0f172a;color:#fff;border-color:#0f172a}
+.game-tab img{width:22px;height:22px;border-radius:50%;object-fit:cover}
+.card{background:#fff;margin:10px 15px;border-radius:16px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card h3{font-size:15px;margin-bottom:10px}
+.id-row{display:flex;gap:8px}
+.id-row input{flex:1;padding:12px;border:1.5px solid #e2e8f0;border-radius:10px;outline:none;font-size:14px;width:100%}
+.id-row input:focus{border-color:#0ea5e9}
+.btn-cek{background:#0f172a;color:#fff;border:none;padding:0 20px;border-radius:10px;font-weight:700;cursor:pointer;white-space:nowrap}
+#cekResult{font-size:12px;margin-top:8px;min-height:16px}
+.nominal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nominal{border:1.5px solid #e2e8f0;border-radius:12px;padding:12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nominal.active{border-color:#0ea5e9;background:#f0f9ff}
+.nominal b{font-size:13px;color:#2563eb} .nominal span{font-size:12px;color:#f97316;font-weight:700}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.pay{border:1.5px solid #e2e8f0;border-radius:12px;padding:10px;text-align:center;cursor:pointer;background:#fff}
+.pay.active{border-color:#0ea5e9;background:#f0f9ff}
+.pay img{width:100%;height:32px;object-fit:contain}
+.pay small{font-size:11px;font-weight:600}
+.qris-box{text-align:center;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:12px;padding:14px;margin-top:10px}
+.qris-box img{width:140px;height:140px;object-fit:contain;background:#fff;padding:8px;border-radius:8px}
+.about{background:#fff;margin:10px 15px;border-radius:16px;padding:15px;font-size:12px;line-height:1.6;color:#475569}
+.about h3{color:#0f172a;font-size:14px;margin-bottom:6px}
+.footer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;padding:12px 15px;display:flex;gap:10px;z-index:20}
+.total{flex:1} .total small{color:#64748b;font-size:11px} .total b{font-size:16px;color:#0f172a}
+.btn-beli{flex:1.2;background:#f97316;color:#fff;border:none;border-radius:12px;font-weight:800;font-size:15px}
+.wa-float{position:fixed;bottom:85px;right:15px;background:#22c55e;color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:25}
+</style>
+</head>
+<body>
 
-<div class="pill-wrap" id="pillWrap">
-<button class="pill active" data-game="ml">💎 MLBB</button>
-<button class="pill" data-game="ff">🔥 FF</button>
-<button class="pill" data-game="pubg">🎯 PUBG</button>
-<button class="pill" data-game="valo">🔫 Valorant</button>
-<button class="pill" data-game="genshin">🌟 Genshin</button>
-<button class="pill" data-game="ewallet">💜 E-Wallet</button>
+<div class="header"><b>💎 FRL <span>TOP UP</span></b><button class="btn-cs" onclick="cs()">💬 CS / Bantuan</button></div>
+
+<div class="hero"><div><h2>Top Up Murah<br>Proses Detik ⚡</h2><p>Garansi • 24 Jam • Resmi & Aman</p></div><div class="diamond">💎</div></div>
+
+<div class="info-bar">
+<div>⚡ Proses 1 Menit</div><div>✅ 100% Legal</div><div>💬 CS 24 Jam</div>
 </div>
 
-<div class="box"><h3>1. User ID</h3><div class="row"><input id="uid" class="inp" placeholder="User ID"><input id="srv" class="inp" style="max-width:90px" placeholder="Server"><button id="btnCheck" class="btn">Cek</button></div><div id="nick" class="nick">✅ Nick: <b id="nickName">-</b></div></div>
+<div class="game-tabs" id="gameTabs"></div>
 
-<div class="box"><h3>2. Pilih Nominal - TAP DI SINI</h3><div class="grid" id="grid"></div></div>
-
-<div class="box"><h3>3. Metode Bayar - TAP DI SINI</h3><div class="paygrid" id="paygrid">
-<button class="pay active" data-pay="BCA">🏦<br>BCA</button>
-<button class="pay" data-pay="BRI">🏦<br>BRI</button>
-<button class="pay" data-pay="DANA">💜<br>DANA</button>
-<button class="pay" data-pay="OVO">💙<br>OVO</button>
-<button class="pay" data-pay="GoPay">💚<br>GoPay</button>
-<button class="pay" data-pay="QRIS">📱<br>QRIS</button>
+<div class="card">
+<h3>1. Masukkan User ID</h3>
+<div class="id-row">
+<input id="userId" type="tel" inputmode="numeric" placeholder="Masukkan User ID (Angka Saja)" oninput="this.value=this.value.replace(/[^0-9]/g,''); resetCek()">
+<input id="serverId" type="text" placeholder="Server (cth: 1234)" style="display:none">
+<button class="btn-cek" id="btnCek" onclick="cekId()">Cek</button>
 </div>
-<div class="total"><span>Total</span><span id="total">Rp 0</span></div>
-<div style="font-size:11px;color:#666;margin-top:8px">Game: <b id="sGame">MLBB</b> | Akun: <b id="sAcc">- Belum cek</b> | Item: <b id="sItem">- Pilih</b></div>
-<button id="btnBuy" class="btn-buy" disabled>TAP UNTUK BAYAR - HARUS CEK ID DULU</button>
+<div id="cekResult"></div>
+<small id="hint" style="color:#64748b;font-size:11px"></small>
+</div>
+
+<div class="card">
+<h3>2. Pilih Nominal - TAP DI SINI</h3>
+<div class="nominal-grid" id="nominalList"></div>
+</div>
+
+<div class="card">
+<h3>3. Pilih Pembayaran</h3>
+<div class="pay-grid">
+<div class="pay" onclick="pilihPay(this,'DANA')"><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_DANA.png"><br><small>DANA</small></div>
+<div class="pay" onclick="pilihPay(this,'OVO')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg"><br><small>OVO</small></div>
+<div class="pay" onclick="pilihPay(this,'GOPAY')"><img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg"><br><small>GoPay</small></div>
+</div>
+<div class="qris-box">
+<b>Atau Scan QRIS</b><br>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FRL-TOPUP-QRIS" alt="QRIS FRL TOP UP">
+<br><small>Scan pakai Dana / OVO / GoPay / M-Banking<br>QRIS akan muncul setelah pilih nominal</small>
+</div>
+</div>
+
+<div class="about">
+<h3>Tentang FRL TOP UP</h3>
+FRL TOP UP adalah toko top up game murah, cepat, dan terpercaya. Melayani Mobile Legends, Free Fire, PUBG Mobile, Valorant, dan Genshin Impact. Proses otomatis 24 jam, garansi uang kembali jika diamond tidak masuk. Butuh bantuan? Hubungi CS WhatsApp kami.
+<br><br><b>Jam Operasional:</b> 24 Jam Setiap Hari<br><b>Rating:</b> ⭐ 4.9 / 5 dari 500+ pelanggan
+</div>
+
+<a class="wa-float" href="https://wa.me/6289519286925?text=Halo%20FRL%20TOP%20UP,%20saya%20butuh%20bantuan" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+<div class="footer">
+<div class="total"><small>Total Bayar</small><br><b id="totalHarga">Rp 0</b><br><small id="totalInfo">Pilih nominal dulu</small></div>
+<button class="btn-beli" onclick="beli()">BELI SEKARANG</button>
 </div>
 
 <script>
-// DATA GAME BEDA OPSI
-var DATA={
-ml:[['86 DM',20000],['172 DM',39500],['344 DM',79000],['720 DM',158000],['WDP',28000],['Starlight',85000],['3688 DM',798000]],
-ff:[['70 DM',10000],['140 DM',20000],['355 DM',50000],['720 DM',100000],['Member Mingguan',28000]],
-pubg:[['60 UC',15000],['325 UC',75000],['660 UC',150000],['1800 UC',400000]],
-valo:[['125 VP',20000],['420 VP',60000],['700 VP',100000],['1375 VP',200000]],
-genshin:[['60 Crystal',15000],['300 Crystal',75000],['Blessing',75000],['980 Crystal',250000]],
-ewallet:[['DANA 50K',52000],['DANA 100K',102000],['GoPay 50K',52000],['OVO 50K',52000]]
-};
-var cur='ml',item=null,price=0,pay='BCA',checked=false,nick='',last=null;
-var grid=document.getElementById('grid');
-var totalEl=document.getElementById('total');
-var sGame=document.getElementById('sGame');
-var sAcc=document.getElementById('sAcc');
-var sItem=document.getElementById('sItem');
-var btnBuy=document.getElementById('btnBuy');
-var nickBox=document.getElementById('nick');
-
-function render(){
-grid.innerHTML='';
-DATA[cur].forEach(function(it){
-var d=document.createElement('button');
-d.className='denom';
-d.style.width='100%';d.style.textAlign='left';d.style.cursor='pointer';
-d.innerHTML='<b style=font-size:12px>'+it[0]+'</b><b style=color:#ff6b00>Rp '+it[1].toLocaleString('id-ID')+'</b>';
-d.addEventListener('click',function(){
-document.querySelectorAll('.denom').forEach(function(e){e.classList.remove('active')});
-d.classList.add('active');
-item=it[0];price=it[1];
-if(navigator.vibrate)navigator.vibrate(30);
-update();
-});
-grid.appendChild(d);
-});
-}
-
-document.getElementById('pillWrap').querySelectorAll('.pill').forEach(function(p){
-p.addEventListener('click',function(){
-document.querySelectorAll('.pill').forEach(function(e){e.classList.remove('active')});
-p.classList.add('active');
-cur=p.dataset.game;
-sGame.innerText=p.innerText;
-checked=false;item=null;price=0;
-nickBox.style.display='none';
-document.getElementById('uid').value='';
-if(cur==='ewallet'||cur==='valo'||cur==='genshin'){
-document.getElementById('srv').style.display='none';
-}else{
-document.getElementById('srv').style.display='block';
-}
-render();update();
-});
-});
-
-document.getElementById('paygrid').querySelectorAll('.pay').forEach(function(p){
-p.addEventListener('click',function(){
-document.querySelectorAll('.pay').forEach(function(e){e.classList.remove('active')});
-p.classList.add('active');
-pay=p.dataset.pay;
-update();
-if(navigator.vibrate)navigator.vibrate(20);
-});
-});
-
-document.getElementById('btnCheck').addEventListener('click',function(){
-var uid=document.getElementById('uid').value;
-if(!uid){alert('Isi ID dulu min!');return;}
-this.innerText='...';
-var self=this;
-setTimeout(function(){
-nick=['FRL Shaa','RRQ Lemon','EVOS Branz','ONIC Kairi'][Math.floor(Math.random()*4)];
-document.getElementById('nickName').innerText=nick;
-nickBox.style.display='block';
-checked=true;
-self.innerText='✓';
-update();
-if(navigator.vibrate)navigator.vibrate(40);
-},800);
-});
-
-function update(){
-sAcc.innerText=checked?nick+' ('+document.getElementById('uid').value+')':'- Belum cek';
-sItem.innerText=item?item+' - Rp '+price.toLocaleString('id-ID'):'- Pilih';
-totalEl.innerText=price?'Rp '+price.toLocaleString('id-ID'):'Rp 0';
-if(checked&&item){
-btnBuy.disabled=false;
-btnBuy.innerText='💳 BAYAR Rp '+price.toLocaleString('id-ID')+' - TAP DI SINI!';
-btnBuy.style.background='#ff6b00';
-}else{
-btnBuy.disabled=true;
-btnBuy.innerText=checked?'Pilih Nominal Dulu - Tap di atas!':'Cek ID Dulu - Tap Tombol Cek!';
-btnBuy.style.background='#ddd';
-}
-}
-
-btnBuy.addEventListener('click',function(){
-if(!checked||!item){alert('Lengkapi dulu!');return;}
-var id='FRL-'+Math.floor(100000+Math.random()*900000);
-last={id:id,game:sGame.innerText,item:item,price:price,pay:pay,nick:nick,uid:document.getElementById('uid').value};
-
-// CONFETTI SIMPLE
-var canvas=document.getElementById('conf');
-canvas.style.display='block';
-canvas.width=innerWidth;canvas.height=innerHeight;
-var ctx=canvas.getContext('2d');
-var parts=[];
-for(var i=0;i<120;i++)parts.push({x:Math.random()*canvas.width,y:-20,vx:(Math.random()-0.5)*6,vy:Math.random()*4+2,r:Math.random()*5+3,c:['#ff6b00','#25D366','#111'][Math.floor(Math.random()*3)],rot:Math.random()*360});
-(function anim(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-var alive=false;
-for(var i=0;i<parts.length;i++){
-var p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.06;
-if(p.y<canvas.height+20){alive=true;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r);ctx.restore();}
-}
-if(alive)requestAnimationFrame(anim);else{ctx.clearRect(0,0,canvas.width,canvas.height);canvas.style.display='none';}
-})();
-if(navigator.vibrate)navigator.vibrate([60,30,60]);
-
-setTimeout(function(){
-var msg='Halo min FRL TOP UP!%0A%0AID Pesanan: '+last.id+'%0AGame: '+last.game+'%0ANick: '+last.nick+'%0AUser ID: '+last.uid+'%0AItem: '+last.item+'%0ATotal: Rp '+last.price.toLocaleString('id-ID')+'%0ABayar: '+last.pay+'%0A%0AProses ya min!';
-if(confirm('✅ PESANAN BERHASIL!%0A%0AID: '+last.id+'%0A'+last.item+'%0ATotal: Rp '+last.price.toLocaleString('id-ID')+'%0A%0ATap OK untuk konfirmasi WA Shaa')){
-window.open('https://wa.me/6289519286925?text='+msg,'_blank');
-}
-},400);
-});
-
-render();update();
+const games = [
+{id:'MLBB', name:'MLBB', icon:'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=100', needServer:true, hint:'MLBB butuh ID + Server. Contoh ID: 12345678, Server: 1234', nominals:[{n:'86 DM',h:20000},{n:'172 DM',h:39500},{n:'344 DM',h:79000},{n:'720 DM',h:158000},{n:'WDP',h:28000},{n:'Starlight',h:85000},{n:'3688 DM',h:798000}]},
+{id:'FF', name:'FF', icon:'https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=100', needServer:false, hint:'Free Fire HANYA butuh ID saja, TIDAK ADA server.', nominals:[{n:'70 DM',h:10000},{n:'140 DM',h:20000},{n:'355 DM',h:50000},{n:'720 DM',h:99000},{n:'Booyah Pass',h:45000}]},
+{id:'PUBG', name:'PUBG', icon:'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100', needServer:false, hint:'PUBG hanya butuh ID saja.', nominals:[{n:'60 UC',h:15000},{n:'325 UC',h:75000},{n:'660 UC',h:150000},{n:'1800 UC',h:390000}]},
+{id:'Valorant', name:'Valorant', icon:'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=100', needServer:false, hint:'Valorant hanya butuh Riot ID.', nominals:[{n:'420 VP',h:45000},{n:'1375 VP',h:140000},{n:'2400 VP',h:230000}]},
+{id:'Genshin', name:'Genshin', icon:'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=100', needServer:true, hint:'Genshin butuh ID + Server. Pilih Server: Asia / America / Europe', nominals:[{n:'60 Genesis',h:15000},{n:'300+30 Genesis',h:75000},{n:'980+110 Genesis',h:235000},{n:'Blessing',h:75000}]},
+];
+let currentGame = games[0];
+let selectedNominal = null;
+let selectedPay = '';
+let isChecked = false;
+function renderTabs(){ document.getElementById('gameTabs').innerHTML = games.map(g=>`<div class="game-tab ${g.id===currentGame.id?'active':''}" onclick="gantiGame('${g.id}')"><img src="${g.icon}"> ${g.name}</div>`).join(''); }
+function gantiGame(id){ currentGame = games.find(g=>g.id===id); document.getElementById('userId').value=''; document.getElementById('serverId').value=''; resetCek(); document.getElementById('serverId').style.display = currentGame.needServer ? 'block' : 'none'; document.getElementById('hint').innerText = currentGame.hint; renderTabs(); renderNominal(); }
+function renderNominal(){ document.getElementById('nominalList').innerHTML = currentGame.nominals.map((x,i)=>`<div class="nominal" onclick="pilihNominal(this,${i})"><b>${x.n}</b><span>Rp ${x.h.toLocaleString('id-ID')}</span></div>`).join(''); selectedNominal=null; updateTotal(); }
+function pilihNominal(el,i){ document.querySelectorAll('.nominal').forEach(e=>e.classList.remove('active')); el.classList.add('active'); selectedNominal=currentGame.nominals[i]; updateTotal(); }
+function updateTotal(){ document.getElementById('totalHarga').innerText = selectedNominal ? 'Rp '+selectedNominal.h.toLocaleString('id-ID') : 'Rp 0'; document.getElementById('totalInfo').innerText = selectedNominal ? currentGame.name+' - '+selectedNominal.n : 'Pilih nominal dulu'; }
+function resetCek(){ isChecked=false; document.getElementById('btnCek').innerText='Cek'; document.getElementById('btnCek').style.background='#0f172a'; document.getElementById('cekResult').innerText=''; }
+function cekId(){ let id=document.getElementById('userId').value; if(!id || id.length<5){ document.getElementById('cekResult').innerHTML='<span style="color:red">❌ ID harus angka, minimal 5 digit!</span>'; return; } if(currentGame.needServer && !document.getElementById('serverId').value){ document.getElementById('cekResult').innerHTML='<span style="color:red">❌ Isi Server dulu!</span>'; return; } document.getElementById('cekResult').innerHTML='<span style="color:#16a34a">⏳ Mengecek...</span>'; setTimeout(()=>{ document.getElementById('cekResult').innerHTML='<span style="color:#16a34a">✅ ID Ditemukan! Nickname: Player FRL ('+id+')</span>'; document.getElementById('btnCek').innerText='✓ Terverifikasi'; document.getElementById('btnCek').style.background='#16a34a'; isChecked=true; },800); }
+function pilihPay(el,nama){ document.querySelectorAll('.pay').forEach(e=>e.classList.remove('active')); el.classList.add('active'); selectedPay=nama; }
+function cs(){ window.open('https://wa.me/6289519286925?text=Halo%20CS%20FRL%20TOP%20UP,%20saya%20butuh%20bantuan','_blank'); }
+function beli(){ if(!document.getElementById('userId').value){ alert('Isi User ID dulu!'); return; } if(!isChecked){ alert('Klik Cek dulu untuk verifikasi ID!'); return; } if(!selectedNominal){ alert('Pilih nominal dulu!'); return; } if(!selectedPay){ alert('Pilih pembayaran dulu! DANA / OVO / GoPay'); return; } let server = currentGame.needServer ? ' | Server: '+document.getElementById('serverId').value : ''; let pesan = `Halo FRL TOP UP, saya mau order:\nGame: ${currentGame.name}\nID: ${document.getElementById('userId').value}${server}\nNominal: ${selectedNominal.n}\nHarga: Rp ${selectedNominal.h.toLocaleString('id-ID')}\nBayar via: ${selectedPay}`; window.open('https://wa.me/6289519286925?text='+encodeURIComponent(pesan),'_blank'); }
+gantiGame('MLBB');
 </script>
-</body></html>
+</body>
+</html>
