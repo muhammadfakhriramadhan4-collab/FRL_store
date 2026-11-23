@@ -3,73 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FRL TOP UP</title>
+<title>FRL TOP UP - Codashop Style</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif;-webkit-tap-highlight-color:transparent}
-body{background:#f1f2f6;padding-bottom:120px}
-.top{background:white;display:flex;justify-content:space-between;align-items:center;padding:12px 14px;position:sticky;top:0;z-index:10}
-.top b{font-size:19px} .top b span{color:#f97316}
-.cs-top{background:#16a34a;color:white;text-decoration:none;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:700}
-.banner{margin:14px;background:linear-gradient(135deg,#0f2a6b,#1e4fd8);color:white;border-radius:16px;padding:18px}
-.banner h2{font-size:23px}
-.banner p{font-size:13px;opacity:.9;margin-top:6px}
-.badges{display:flex;gap:8px;margin:14px}
-.badge{background:white;border-radius:12px;padding:10px 8px;flex:1;text-align:center;font-size:12px;font-weight:700}
-.games{display:flex;gap:10px;overflow-x:auto;padding:0 14px 6px}
-.pill{background:white;border:2px solid #ddd;border-radius:30px;padding:8px 14px;display:flex;align-items:center;gap:7px;white-space:nowrap;font-weight:700;font-size:14px;cursor:pointer;flex-shrink:0}
-.pill.active{border-color:#1e4fd8;background:#e8efff}
-.pill span{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:800}
-.card{background:white;border-radius:16px;padding:16px;margin:14px}
-.card h3{font-size:16px;margin-bottom:12px}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:#2a0a4a;color:white;padding-bottom:100px}
+.top{background:#2a0a4a;display:flex;align-items:center;gap:12px;padding:12px 14px;position:sticky;top:0;z-index:20}
+.menu{font-size:24px;cursor:pointer}
+.logo{font-weight:900;font-size:18px;letter-spacing:.5px;flex:1}
+.logo span{color:#f97316}
+.search{font-size:20px}
+.coin{font-size:20px}
+.flag{font-size:18px}
+.btn-daftar{background:#6d28d9;color:white;border:0;padding:8px 16px;border-radius:20px;font-weight:700;font-size:14px}
+.banner{margin:0 14px;border-radius:14px;overflow:hidden;position:relative;background:#000}
+.banner img{width:100%;height:180px;object-fit:cover;display:block}
+.banner-text{position:absolute;left:12px;top:14px}
+.banner-text i{font-size:13px}
+.banner-text h2{font-size:22px;line-height:1.1;color:#ff5da2;margin-top:6px;text-transform:uppercase}
+.banner-text span{background:#facc15;color:black;font-size:10px;font-weight:800;padding:3px 8px;border-radius:10px}
+.dots{text-align:center;padding:10px}
+.dots i{display:inline-block;width:8px;height:8px;background:#7c3aed;border-radius:50%;margin:0 3px}
+.dots i.active{background:white}
+.sec{padding:6px 14px}
+.sec h2{font-size:26px;font-weight:900;letter-spacing:1px;margin:10px 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.game-card{cursor:pointer;text-align:center}
+.game-card img{width:100%;height:110px;object-fit:cover;border-radius:12px;background:#444}
+.game-card p{font-size:13px;font-weight:700;margin-top:6px;line-height:1.2}
+.rekomen{width:32%;max-width:130px}
+.rekomen img{width:100%;height:140px;object-fit:cover;border-radius:12px}
+.rekomen p{font-size:13px;font-weight:700;text-align:center;margin-top:6px;line-height:1.2}
+#formTopup{display:none;background:white;color:#111;border-radius:16px;margin:14px;padding:16px}
+#formTopup h3{font-size:16px;margin-bottom:12px}
 .row{display:flex;gap:8px}
 .row input{flex:1;padding:12px;border:1.5px solid #ddd;border-radius:10px;font-size:14px;min-width:0}
-.btn-cek{background:#0f172a;color:white;border:0;padding:12px 18px;border-radius:10px;font-weight:700}
-.note{font-size:12px;color:#666;margin-top:10px}
-.nom-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.nom{border:2px solid #ddd;border-radius:12px;padding:12px;cursor:pointer;background:#fff;text-align:center}
-.nom.active{border-color:#1e4fd8;background:#e8efff}
-.nom b{color:#1e4fd8;display:block} .nom span{color:#f97316;font-weight:700;font-size:13px}
+.btn-cek{background:#2a0a4a;color:white;border:0;padding:12px 18px;border-radius:10px;font-weight:700}
+.nom-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.nom{border:2px solid #ddd;border-radius:12px;padding:12px;cursor:pointer;text-align:center;background:#fff}
+.nom.active{border-color:#6d28d9;background:#ede9fe}
+.nom b{color:#6d28d9;display:block} .nom span{color:#f97316;font-weight:700;font-size:13px}
 .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.pay-item{border:2px solid #ddd;border-radius:12px;padding:12px 6px;text-align:center;cursor:pointer;background:white}
-.pay-item.active{border-color:#1e4fd8;background:#e8efff}
-.logo-box{height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:13px;margin-bottom:6px}
+.pay-item{border:2px solid #ddd;border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;background:white}
+.pay-item.active{border-color:#6d28d9;background:#ede9fe}
+.logo-box{height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:13px;margin-bottom:5px}
 .pay-item p{font-size:12px;font-weight:700}
-.qris-box{display:none;text-align:center;margin-top:12px;border:1px dashed #999;padding:12px;border-radius:12px}
-.qris-box img{width:160px;height:160px}
-.sticky{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;align-items:center;gap:12px;padding:12px 14px;box-shadow:0 -3px 12px rgba(0,0,0,.12);z-index:20}
-.btn-beli{flex:1;background:#f97316;color:white;border:0;padding:16px;border-radius:12px;font-weight:800;font-size:16px}
-.wa-float{position:fixed;right:14px;bottom:100px;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;z-index:30}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:white;color:#111;display:flex;align-items:center;gap:12px;padding:12px 14px;z-index:30}
+.btn-beli{flex:1;background:#f97316;color:white;border:0;padding:14px;border-radius:12px;font-weight:800;font-size:15px}
+.wa{position:fixed;right:14px;bottom:90px;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;z-index:40}
 </style>
 </head>
 <body>
-<div class="top"><b>💎 FRL <span>TOP UP</span></b><a class="cs-top" href="https://wa.me/6281234567890?text=Halo%20min">💬 CS / Bantuan</a></div>
-<div class="banner"><h2>Top Up Murah<br>Proses Detik ⚡</h2><p>Garansi • 24 Jam • Resmi & Aman</p></div>
-<div class="badges"><div class="badge">⚡ Proses 1 Menit</div><div class="badge">✅ 100% Legal</div><div class="badge">💬 CS 24 Jam</div></div>
-<div class="games">
-<div class="pill active" onclick="gantiGame(this,'MLBB')"><span style="background:#7c3aed">ML</span> MLBB</div>
-<div class="pill" onclick="gantiGame(this,'FF')"><span style="background:#f97316">FF</span> FF</div>
-<div class="pill" onclick="gantiGame(this,'PUBG')"><span style="background:#eab308">PB</span> PUBG</div>
-<div class="pill" onclick="gantiGame(this,'Valorant')"><span style="background:#ef4444">VL</span> Valorant</div>
-<div class="pill" onclick="gantiGame(this,'Genshin')"><span style="background:#38bdf8">GN</span> Genshin</div>
-<div class="pill" onclick="gantiGame(this,'Roblox')"><span style="background:#111">RB</span> Roblox</div>
+
+<div class="top">
+<div class="menu" onclick="alert('Menu - WA CS: 081234567890')">☰</div>
+<div class="logo">💎 FRL <span>TOP UP</span></div>
+<div class="search">🔍</div>
+<div class="coin">🪙</div>
+<div class="flag">🇮🇩 ID</div>
+<button class="btn-daftar" onclick="window.open('https://wa.me/6281234567890?text=Halo%20min%20mau%20daftar','_blank')">Daftar</button>
 </div>
-<div class="card">
-<h3>1. Masukkan User ID</h3>
-<div class="row"><input type="text" id="userId" placeholder="Masukkan User ID"><input type="text" id="serverId" placeholder="Server"><button class="btn-cek" id="cekBtn" onclick="cekID()">Cek</button></div>
-<p class="note" id="gameNote">MLBB butuh ID + Server</p>
+
+<div class="banner" onclick="pilihGame('MLBB')">
+<img src="https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg">
+<div class="banner-text"><i>MLBB</i><h2>TOP UP<br>MURAH<br>DI FRL!</h2><span>TOP UP SEKARANG</span></div>
+</div>
+<div class="dots"><i class="active"></i><i></i><i></i><i></i><i></i></div>
+
+<div class="sec"><h2>REKOMENDASI</h2>
+<div class="rekommen" onclick="pilihGame('MLBB')">
+<img src="https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg">
+<p>Mobile<br>Legends:<br>Bang Bang</p>
+</div>
+</div>
+
+<div class="sec"><h2>UNGGULAN</h2>
+<div class="grid3">
+<div class="game-card" onclick="pilihGame('MLBB')"><img src="https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg"><p>Mobile Legends</p></div>
+<div class="game-card" onclick="pilihGame('FF')"><img src="https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg"><p>Free Fire</p></div>
+<div class="game-card" onclick="pilihGame('PUBG')"><img src="https://cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg"><p>PUBG Mobile</p></div>
+<div class="game-card" onclick="pilihGame('Valorant')"><img src="https://cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg"><p>Valorant</p></div>
+<div class="game-card" onclick="pilihGame('Genshin')"><img src="https://cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg"><p>Genshin Impact</p></div>
+<div class="game-card" onclick="pilihGame('Roblox')"><img src="https://cdn1.codashop.com/S/content/common/images/denom-image/Roblox/Roblox-326x190.jpg"><p>Roblox</p></div>
+</div>
+</div>
+
+<!-- FORM TOP UP - MUNCUL KALO PENCET GAME -->
+<div id="formTopup">
+<h3 id="judulGame">1. Top Up MLBB - Masukkan User ID</h3>
+<div class="row"><input type="text" id="userId" placeholder="Masukkan User ID"><input type="text" id="serverId" placeholder="Server"><button class="btn-cek" onclick="cekID()">Cek</button></div>
 <p id="cekResult" style="font-size:13px;margin-top:8px;font-weight:700;color:#16a34a"></p>
-</div>
-<div class="card">
-<h3>2. Pilih Nominal</h3>
-<div class="nom-wrap" id="nomWrap">
-<div class="nom" onclick="pilihNom(this,'86 DM','Rp 20.000')"><b>86 DM</b><span>Rp 20.000</span></div>
-<div class="nom" onclick="pilihNom(this,'172 DM','Rp 39.500')"><b>172 DM</b><span>Rp 39.500</span></div>
-<div class="nom" onclick="pilihNom(this,'257 DM','Rp 59.000')"><b>257 DM</b><span>Rp 59.000</span></div>
-<div class="nom" onclick="pilihNom(this,'706 DM','Rp 160.000')"><b>706 DM</b><span>Rp 160.000</span></div>
-</div>
-</div>
-<div class="card">
-<h3>3. Pilih Pembayaran</h3>
+<h3 style="margin-top:16px">2. Pilih Nominal</h3>
+<div class="nom-wrap" id="nomWrap"></div>
+<h3 style="margin-top:16px">3. Pilih Pembayaran</h3>
 <div class="pay">
 <div class="pay-item" onclick="pilihPay(this,'DANA')"><div class="logo-box" style="background:#118EEA">DANA</div><p>DANA</p></div>
 <div class="pay-item" onclick="pilihPay(this,'OVO')"><div class="logo-box" style="background:#4C2A85">OVO</div><p>OVO</p></div>
@@ -78,29 +104,28 @@ body{background:#f1f2f6;padding-bottom:120px}
 <div class="pay-item" onclick="pilihPay(this,'QRIS')"><div class="logo-box" style="background:#111">QRIS</div><p>QRIS</p></div>
 <div class="pay-item" onclick="pilihPay(this,'Bank')"><div class="logo-box" style="background:#64748b">BANK</div><p>Bank</p></div>
 </div>
-<div class="qris-box" id="qrisBox"><b>Scan QRIS Ini</b><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FRLTOPUP"><p style="font-size:12px">FRL TOP UP</p></div>
 </div>
-<a class="wa-float" href="https://wa.me/6281234567890?text=Halo%20min" target="_blank">💬</a>
-<div class="sticky"><div><small>Total Bayar</small><br><b id="totalTxt">Rp 0</b><br><small id="totalNote">Pilih nominal dulu</small></div><button class="btn-beli" onclick="beli()">BELI SEKARANG</button></div>
+
+<a class="wa" href="https://wa.me/6281234567890?text=Halo%20min" target="_blank">💬</a>
+
+<div class="sticky"><div><small>Total Bayar</small><br><b id="totalTxt">Rp 0</b><br><small id="totalNote">Pilih game dulu</small></div><button class="btn-beli" onclick="beli()">BELI SEKARANG</button></div>
+
 <script>
-var gameNow="MLBB"; var nomNow=""; var hargaNow=""; var payNow="";
+var gameNow=""; var nomNow=""; var hargaNow=""; var payNow="";
 var nominals={"MLBB":[["86 DM","Rp 20.000"],["172 DM","Rp 39.500"],["257 DM","Rp 59.000"],["706 DM","Rp 160.000"]],"FF":[["70 DM","Rp 10.000"],["140 DM","Rp 20.000"],["355 DM","Rp 50.000"],["720 DM","Rp 100.000"]],"PUBG":[["60 UC","Rp 15.000"],["325 UC","Rp 75.000"],["660 UC","Rp 150.000"]],"Valorant":[["475 VP","Rp 50.000"],["1000 VP","Rp 100.000"]],"Genshin":[["60 Genesis","Rp 16.000"],["300+30 Genesis","Rp 79.000"]],"Roblox":[["80 Robux","Rp 15.000"],["400 Robux","Rp 70.000"]]};
-function gantiGame(el,nama){
-  var all=document.querySelectorAll(".pill");
-  for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
-  el.classList.add("active");
-  gameNow=nama;
-  document.getElementById("cekBtn").innerText="Cek";
-  document.getElementById("cekResult").innerText="";
-  var srv=document.getElementById("serverId");
-  var note=document.getElementById("gameNote");
-  if(nama=="FF"){srv.style.display="none"; note.innerText="FF HANYA butuh ID, TIDAK ada server!";}
-  else{srv.style.display="block"; note.innerText="Masukkan ID game "+nama;}
+function pilihGame(nama){
+  gameNow=nama; nomNow=""; hargaNow=""; payNow="";
+  document.getElementById("formTopup").style.display="block";
+  document.getElementById("judulGame").innerText="1. Top Up "+nama+" - Masukkan User ID";
+  document.getElementById("totalTxt").innerText="Rp 0";
+  document.getElementById("totalNote").innerText=nama+" - Pilih nominal dulu";
   var list=nominals[nama]||nominals["MLBB"];
   var html="";
-  for(var j=0;j<list.length;j++){html+='<div class="nom" onclick="pilihNom(this,\''+list[j][0]+'\',\''+list[j][1]+'\')"><b>'+list[j][0]+'</b><span>'+list[j][1]+'</span></div>';}
+  for(var i=0;i<list.length;i++){html+='<div class="nom" onclick="pilihNom(this,\''+list[i][0]+'\',\''+list[i][1]+'\')"><b>'+list[i][0]+'</b><span>'+list[i][1]+'</span></div>';}
   document.getElementById("nomWrap").innerHTML=html;
-  nomNow=""; hargaNow=""; document.getElementById("totalTxt").innerText="Rp 0"; document.getElementById("totalNote").innerText="Pilih nominal dulu";
+  document.getElementById("formTopup").scrollIntoView({behavior:"smooth"});
+  var srv=document.getElementById("serverId");
+  srv.style.display=(nama=="FF")?"none":"block";
 }
 function pilihNom(el,nama,harga){
   var all=document.querySelectorAll(".nom");
@@ -115,16 +140,15 @@ function pilihPay(el,nama){
   for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
   el.classList.add("active");
   payNow=nama;
-  document.getElementById("qrisBox").style.display=(nama=="QRIS")?"block":"none";
 }
 function cekID(){
   var id=document.getElementById("userId").value;
   if(!id){alert("Isi ID dulu!");return;}
-  document.getElementById("cekResult").innerText="✅ Akun ditemukan: Player_"+id.slice(-4);
-  document.getElementById("cekBtn").innerText="✓";
+  document.getElementById("cekResult").innerText="✅ Akun ditemukan: Player_"+id.slice(-4)+" ("+gameNow+")";
 }
 function beli(){
   var id=document.getElementById("userId").value;
+  if(!gameNow){alert("Pilih game dulu! Pencet gambar game nya!");return;}
   if(!id){alert("Isi ID dulu!");return;}
   if(!nomNow){alert("Pilih nominal dulu!");return;}
   if(!payNow){alert("Pilih pembayaran dulu!");return;}
