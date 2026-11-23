@@ -11,20 +11,24 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 .logo{font-weight:900;font-size:18px;flex:1;line-height:1.1}
 .logo span{color:#f97316}
 .btn-daftar{background:#6d28d9;color:white;border:0;padding:8px 16px;border-radius:20px;font-weight:700}
-.banner{margin:0 14px;border-radius:14px;padding:20px;background:linear-gradient(135deg,#7c3aed,#db2777,#f97316);min-height:170px}
-.banner i{font-size:13px}
+.banner-scroll{display:flex;gap:10px;overflow-x:auto;padding:0 14px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.banner-scroll::-webkit-scrollbar{display:none}
+.banner{min-width:92%;scroll-snap-align:center;border-radius:14px;padding:20px;background:linear-gradient(135deg,#7c3aed,#db2777,#f97316);min-height:170px;flex-shrink:0;cursor:pointer}
+.banner2{background:linear-gradient(135deg,#f97316,#eab308,#16a34a)}
+.banner3{background:linear-gradient(135deg,#0ea5e9,#2563eb,#7c3aed)}
 .banner h2{font-size:26px;line-height:1.1;margin-top:8px}
 .banner span{background:#facc15;color:black;font-size:11px;font-weight:800;padding:5px 10px;border-radius:10px;display:inline-block;margin-top:10px}
-.dots{text-align:center;padding:10px}
-.dots i{display:inline-block;width:8px;height:8px;background:#7c3aed;border-radius:50%;margin:0 3px}
-.dots i.active{background:white}
+.dots{text-align:center;padding:8px;font-size:12px;color:#c4b5fd}
+.games-scroll{display:flex;gap:12px;overflow-x:auto;padding:10px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.games-scroll::-webkit-scrollbar{display:none}
+.game-item{min-width:110px;scroll-snap-align:start;cursor:pointer;text-align:center;flex-shrink:0}
+.game-item img{width:110px;height:120px;object-fit:cover;border-radius:12px;background:#444;display:block}
+.game-item p{font-size:13px;font-weight:700;margin-top:6px;line-height:1.2}
 .sec{padding:6px 14px}
-.sec h2{font-size:26px;font-weight:900;letter-spacing:1px;margin:10px 0}
+.sec h2{font-size:24px;font-weight:900;margin:10px 0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.tile{height:120px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;text-align:center;padding:8px}
-.tile b{font-size:26px;line-height:1}
-.tile small{font-size:11px;font-weight:700;margin-top:6px}
-.game-name{font-size:13px;font-weight:700;text-align:center;margin-top:6px;line-height:1.2}
+.grid3 img{width:100%;height:110px;object-fit:cover;border-radius:12px;background:#444}
+.grid3 p{font-size:13px;font-weight:700;text-align:center;margin-top:6px}
 #formTopup{display:none;background:white;color:#111;border-radius:16px;margin:14px;padding:16px}
 .row{display:flex;gap:8px}
 .row input{flex:1;padding:12px;border:1.5px solid #ddd;border-radius:10px;font-size:14px;min-width:0}
@@ -36,8 +40,8 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
 .pay-item{border:2px solid #ddd;border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;background:white}
 .pay-item.active{border-color:#6d28d9;background:#ede9fe}
-.logo-box{height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:13px;margin-bottom:5px}
-.pay-item p{font-size:12px;font-weight:700}
+.pay-item img{width:70px;height:38px;object-fit:contain}
+.pay-item p{font-size:12px;font-weight:700;margin-top:4px}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:white;color:#111;display:flex;align-items:center;gap:12px;padding:12px 14px;z-index:30}
 .btn-beli{flex:1;background:#f97316;color:white;border:0;padding:14px;border-radius:12px;font-weight:800;font-size:15px}
 .wa{position:fixed;right:14px;bottom:95px;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;z-index:40}
@@ -47,30 +51,35 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 <div class="top">
 <div style="font-size:24px">☰</div>
 <div class="logo">💎 FRL<br><span>TOP UP</span></div>
-<div>🔍</div><div>🪙</div><div>🇮🇩 ID</div>
-<button class="btn-daftar" onclick="window.open('https://wa.me/6281234567890?text=Halo%20min%20mau%20daftar','_blank')">Daftar</button>
+<div>🔍</div><div>🪙</div><div>🇮🇩</div>
+<button class="btn-daftar" onclick="window.open('https://wa.me/6281234567890?text=Halo%20min','_blank')">Daftar</button>
 </div>
 
-<div class="banner" onclick="pilihGame('MLBB')">
-<i>MLBB</i><h2>TOP UP<br>MURAH<br>DI FRL!</h2><span>TOP UP SEKARANG ▶</span>
+<div class="banner-scroll">
+<div class="banner" onclick="pilihGame('MLBB')"><i>MLBB</i><h2>TOP UP<br>MURAH<br>DI FRL!</h2><span>TOP UP SEKARANG ▶</span></div>
+<div class="banner banner2" onclick="pilihGame('FF')"><i>FREE FIRE</i><h2>TOP UP<br>FF MURAH<br>1 MENIT!</h2><span>TOP UP SEKARANG ▶</span></div>
+<div class="banner banner3" onclick="pilihGame('PUBG')"><i>PUBG</i><h2>TOP UP<br>UC MURAH<br>GARANSI!</h2><span>TOP UP SEKARANG ▶</span></div>
 </div>
-<div class="dots"><i class="active"></i><i></i><i></i><i></i><i></i></div>
+<div class="dots">◀ GESER KE KIRI ▶</div>
 
-<div class="sec"><h2>REKOMENDASI</h2>
-<div style="width:130px" onclick="pilihGame('MLBB')">
-<div class="tile" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);height:150px"><b>⚔️</b><b>MLBB</b><small>MOBILE LEGENDS</small></div>
-<p class="game-name">Mobile Legends: Bang Bang</p>
-</div>
+<div class="sec"><h2>REKOMENDASI - GESER ▶</h2></div>
+<div class="games-scroll">
+<div class="game-item" onclick="pilihGame('MLBB')"><img src="mlbb.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg'"><p>Mobile Legends</p></div>
+<div class="game-item" onclick="pilihGame('FF')"><img src="ff.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg'"><p>Free Fire</p></div>
+<div class="game-item" onclick="pilihGame('PUBG')"><img src="pubg.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg'"><p>PUBG Mobile</p></div>
+<div class="game-item" onclick="pilihGame('Valorant')"><img src="valorant.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg'"><p>Valorant</p></div>
+<div class="game-item" onclick="pilihGame('Genshin')"><img src="genshin.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg'"><p>Genshin</p></div>
+<div class="game-item" onclick="pilihGame('Roblox')"><img src="roblox.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Roblox/Roblox-326x190.jpg'"><p>Roblox</p></div>
 </div>
 
 <div class="sec"><h2>UNGGULAN</h2>
 <div class="grid3">
-<div onclick="pilihGame('MLBB')"><div class="tile" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)"><b>⚔️</b><small>MLBB</small></div><p class="game-name">Mobile Legends</p></div>
-<div onclick="pilihGame('FF')"><div class="tile" style="background:linear-gradient(135deg,#f97316,#ea580c)"><b>🔥</b><small>FREE FIRE</small></div><p class="game-name">Free Fire</p></div>
-<div onclick="pilihGame('PUBG')"><div class="tile" style="background:linear-gradient(135deg,#eab308,#a16207)"><b>🎯</b><small>PUBG</small></div><p class="game-name">PUBG Mobile</p></div>
-<div onclick="pilihGame('Valorant')"><div class="tile" style="background:linear-gradient(135deg,#ef4444,#991b1b)"><b>💥</b><small>VALORANT</small></div><p class="game-name">Valorant</p></div>
-<div onclick="pilihGame('Genshin')"><div class="tile" style="background:linear-gradient(135deg,#38bdf8,#0369a1)"><b>✨</b><small>GENSHIN</small></div><p class="game-name">Genshin Impact</p></div>
-<div onclick="pilihGame('Roblox')"><div class="tile" style="background:linear-gradient(135deg,#333,#111)"><b>🧱</b><small>ROBLOX</small></div><p class="game-name">Roblox</p></div>
+<div onclick="pilihGame('MLBB')"><img src="mlbb.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/MLBB/MLBB-326x190.jpg'"><p>Mobile Legends</p></div>
+<div onclick="pilihGame('FF')"><img src="ff.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/FreeFire-326x190.jpg'"><p>Free Fire</p></div>
+<div onclick="pilihGame('PUBG')"><img src="pubg.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/PUBGM/PUBGM-326x190.jpg'"><p>PUBG Mobile</p></div>
+<div onclick="pilihGame('Valorant')"><img src="valorant.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Valorant/Valorant-326x190.jpg'"><p>Valorant</p></div>
+<div onclick="pilihGame('Genshin')"><img src="genshin.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/GenshinImpact/GenshinImpact-326x190.jpg'"><p>Genshin</p></div>
+<div onclick="pilihGame('Roblox')"><img src="roblox.jpg" onerror="this.src='https://cdn1.codashop.com/S/content/common/images/denom-image/Roblox/Roblox-326x190.jpg'"><p>Roblox</p></div>
 </div>
 </div>
 
@@ -82,13 +91,14 @@ body{background:#2a0a4a;color:white;padding-bottom:110px}
 <div class="nom-wrap" id="nomWrap"></div>
 <h3 style="margin-top:16px">3. Pilih Pembayaran</h3>
 <div class="pay">
-<div class="pay-item" onclick="pilihPay(this,'DANA')"><div class="logo-box" style="background:#118EEA">DANA</div><p>DANA</p></div>
-<div class="pay-item" onclick="pilihPay(this,'OVO')"><div class="logo-box" style="background:#4C2A85">OVO</div><p>OVO</p></div>
-<div class="pay-item" onclick="pilihPay(this,'GoPay')"><div class="logo-box" style="background:#00AA13">GoPay</div><p>GoPay</p></div>
-<div class="pay-item" onclick="pilihPay(this,'ShopeePay')"><div class="logo-box" style="background:#EE4D2D">ShopeePay</div><p>ShopeePay</p></div>
-<div class="pay-item" onclick="pilihPay(this,'QRIS')"><div class="logo-box" style="background:#111">QRIS</div><p>QRIS</p></div>
-<div class="pay-item" onclick="pilihPay(this,'Bank')"><div class="logo-box" style="background:#64748b">BANK</div><p>Bank</p></div>
+<div class="pay-item" onclick="pilihPay(this,'DANA')"><img src="dana.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_DANA.png'"><p>DANA</p></div>
+<div class="pay-item" onclick="pilihPay(this,'OVO')"><img src="ovo.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg'"><p>OVO</p></div>
+<div class="pay-item" onclick="pilihPay(this,'GoPay')"><img src="gopay.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg'"><p>GoPay</p></div>
+<div class="pay-item" onclick="pilihPay(this,'ShopeePay')"><img src="shopeepay.png" onerror="this.src='https://images.seeklogo.com/logo-png/33/1/shopeepay-logo-png_seeklogo-332544.png'"><p>ShopeePay</p></div>
+<div class="pay-item" onclick="pilihPay(this,'QRIS')"><img src="qris.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg'"><p>QRIS</p></div>
+<div class="pay-item" onclick="pilihPay(this,'Bank')"><img src="bank.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2830/2830284.png'"><p>Bank</p></div>
 </div>
+<div id="qrisBox" style="display:none;text-align:center;margin-top:12px;border:1px dashed #999;padding:12px;border-radius:12px"><b>Scan QRIS Ini</b><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FRLTOPUP" style="width:160px;height:160px"><p style="font-size:12px">FRL TOP UP</p></div>
 </div>
 
 <a class="wa" href="https://wa.me/6281234567890?text=Halo%20min" target="_blank">💬</a>
@@ -101,14 +111,19 @@ function pilihGame(nama){
   gameNow=nama; nomNow=""; hargaNow=""; payNow="";
   document.getElementById("formTopup").style.display="block";
   document.getElementById("judulGame").innerText="1. Top Up "+nama+" - Masukkan User ID";
-  document.getElementById("totalTxt").innerText="Rp 0";
-  document.getElementById("totalNote").innerText=nama+" - Pilih nominal dulu";
+  document.getElementById("cekResult").innerText="";
   var list=nominals[nama]||nominals["MLBB"];
   var html="";
   for(var i=0;i<list.length;i++){html+='<div class="nom" onclick="pilihNom(this,\''+list[i][0]+'\',\''+list[i][1]+'\')"><b>'+list[i][0]+'</b><span>'+list[i][1]+'</span></div>';}
   document.getElementById("nomWrap").innerHTML=html;
   document.getElementById("formTopup").scrollIntoView({behavior:"smooth"});
   document.getElementById("serverId").style.display=(nama=="FF")?"none":"block";
+  setTimeout(function(){
+    var first=document.querySelector(".nom");
+    if(first){first.click();}
+    var dana=document.querySelectorAll(".pay-item")[0];
+    if(dana){dana.click();}
+  },100);
 }
 function pilihNom(el,nama,harga){
   var all=document.querySelectorAll(".nom");
@@ -123,6 +138,8 @@ function pilihPay(el,nama){
   for(var i=0;i<all.length;i++){all[i].classList.remove("active");}
   el.classList.add("active");
   payNow=nama;
+  var q=document.getElementById("qrisBox");
+  if(q){q.style.display=(nama=="QRIS")?"block":"none";}
 }
 function cekID(){
   var id=document.getElementById("userId").value;
@@ -131,7 +148,7 @@ function cekID(){
 }
 function beli(){
   var id=document.getElementById("userId").value;
-  if(!gameNow){alert("Pilih game dulu! Pencet kotak game nya!");return;}
+  if(!gameNow){alert("Pilih game dulu!");return;}
   if(!id){alert("Isi ID dulu!");return;}
   if(!nomNow){alert("Pilih nominal dulu!");return;}
   if(!payNow){alert("Pilih pembayaran dulu!");return;}
